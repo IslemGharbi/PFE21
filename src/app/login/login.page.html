@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-title size="large" >
+      FMS
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+        <ion-card>
+          <ion-card-header color="dark ">
+            <ion-card-title>Login</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item>
+              <ion-label position="floating" color="dark">Nom</ion-label>
+              <ion-input type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating" color="dark">Prenom</ion-label>
+              <ion-input type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating" color="dark">Mot de passe</ion-label>
+              <ion-input type="password"></ion-input>
+            </ion-item>
+
+          <ion-item>
+            <ion-button fill="outline" slot="end" color="dark">Login <ion-icon name="arrow-forward-outline"></ion-icon></ion-button>
+
+            <ion-button fill="outline" slot="start" color="dark"(click)="add()" ><ion-icon name="person-add-outline" ></ion-icon>Ajouter </ion-button>
+          </ion-item>
+
+
+
+
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+</ion-content>
