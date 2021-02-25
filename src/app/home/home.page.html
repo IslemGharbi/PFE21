@@ -12,7 +12,7 @@
       <ion-col size-md="6" offset-md="3">
         <ion-card>
           <ion-card-header color="dark ">
-            <ion-card-title>Sign up</ion-card-title>
+            <ion-card-title>Ajouter</ion-card-title>
           </ion-card-header>
           <ion-card-content>
             <ion-item>
@@ -33,17 +33,17 @@
             </ion-item>
             <ion-item>
               <ion-label color="dark">Profil</ion-label>
-              <ion-select placeholder="Select One">
+              <ion-select placeholder="Select Profils">
                 <ion-select-option value="1">Profil1</ion-select-option>
                 <ion-select-option value="2">Profil2</ion-select-option>
               </ion-select>
             </ion-item>
             <ion-item>
               <ion-label color="dark">Etat</ion-label>
-              <ion-select placeholder="Select One">
-                <ion-select-option value="A">Actif</ion-select-option>
-                <ion-select-option value="I">Inactif</ion-select-option>
-                <ion-select-option value="B">Bloqué</ion-select-option>
+              <ion-select placeholder="Select Etat">
+                <ion-select-option value="Actif">Actif</ion-select-option>
+                <ion-select-option value="Inactif">Inactif</ion-select-option>
+                <ion-select-option value="Bloqué">Bloqué</ion-select-option>
               </ion-select>
             </ion-item>
             <ion-item>
@@ -64,7 +64,7 @@
 
             </ion-item>
             <ion-item>
-              <ion-button fill="outline" slot="end" color="dark">Ajouter <ion-icon name="person-add-outline"></ion-icon></ion-button>
+              <ion-button fill="solid" slot="end" color="success">Ajouter <ion-icon name="person-add-outline"></ion-icon></ion-button>
               <ion-button fill="outline" slot="start" color="danger" (click)="cansel()"><ion-icon name="arrow-back-outline"></ion-icon> Cancel </ion-button>
             </ion-item>
 
