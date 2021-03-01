@@ -10,7 +10,7 @@ export class HomePage {
 
   constructor(private router : Router) {}
   cansel(){
-    this.router.navigate(['login'])
+    this.router.navigate(['mainhome'])
   }
 
 }
