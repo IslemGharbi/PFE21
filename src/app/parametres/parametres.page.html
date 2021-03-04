@@ -1,0 +1,104 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-title size="large" >
+      FMS
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+        <ion-card>
+          <ion-card-header color="dark ">
+            <ion-card-title>Paramètres</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list>
+            <ion-item (click)="inMonnaie()">
+              <ion-label  color="dark">Monnaie
+              </ion-label>
+
+            </ion-item>
+
+
+            <ion-item (click)="inTVA()">
+              <ion-label  color="dark">TVA</ion-label>
+            </ion-item>
+
+
+            <ion-item (click)="inDelegation()">
+              <ion-label  color="dark">délégation</ion-label>
+            </ion-item>
+
+
+            <ion-item (click)="inPays()">
+              <ion-label  color="dark">pays</ion-label>
+            </ion-item>
+
+
+            <ion-item>
+              <ion-label (click)="inTypeSociete()" color="dark">Type Société</ion-label>
+
+            </ion-item>
+
+            <ion-item>
+              <ion-label (click)="inRegime()" color="dark">Régime</ion-label>
+            </ion-item>
+
+
+            <ion-item (click)="inRegimeJuridique()">
+              <ion-label  color="dark">Forme Juridique</ion-label>
+            </ion-item>
+
+            <ion-item (click)="inSecteur()">
+              <ion-label  color="dark">Secteur</ion-label>
+            </ion-item>
+
+            <ion-item>
+              <ion-label (click)="inProfil()" color="dark">Etat Profil</ion-label>
+            </ion-item>
+
+            <ion-item (click)="inOffre()">
+              <ion-label color="dark">Etat D'offre</ion-label>
+            </ion-item>
+
+            <ion-item (click)="inEtatCommande()" >
+              <ion-label color="dark">Etat Commande </ion-label>
+            </ion-item>
+
+
+            <ion-item (click)="inEtatIntervention()" >
+              <ion-label  color="dark">Etat Intervention </ion-label>
+            </ion-item>
+
+            <ion-item (click)="inEtatPlanning()" >
+              <ion-label  color="dark">Etat Planning  </ion-label>
+            </ion-item>
+
+            <ion-item (click)="inTypeIntervention()" >
+              <ion-label  color="dark">Type Intervention </ion-label>
+            </ion-item>
+
+            <ion-item (click)="inPrestation()" >
+              <ion-label  color="dark">Prestation</ion-label>
+            </ion-item  >
+            <ion-item (click)="inProduit()">
+              <ion-label  color="dark">Produit</ion-label>
+
+            </ion-item>
+            <ion-item (click)="inModule()" >
+              <ion-label  color="dark">Module Et Options </ion-label>
+
+            </ion-item>
+          </ion-list>
+
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

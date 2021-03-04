@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { LoginPage } from './login/login.page';
 import { Router } from '@angular/router';
 
 
@@ -21,6 +20,6 @@ export class AppComponent {
     this.router.navigate(['prospect'])
   }
   param(){
-    this.router.navigate(['parametre'])
+    this.router.navigate(['parametres'])
   }
 }

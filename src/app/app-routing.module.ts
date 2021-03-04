@@ -23,18 +23,17 @@ const routes: Routes = [
     path: 'mainhome',
     loadChildren: () => import('./mainhome/mainhome.module').then( m => m.MainhomePageModule)
   },
+
+
   {
-    path: 'parametre',
-    loadChildren: () => import('./parametre/parametre.module').then( m => m.ParametrePageModule)
+
+
+    path: 'parametres',
+    loadChildren: () => import('./parametres/parametres.module').then( m => m.ParametresPageModule)
   },
-  {
-    path: 'monnaies',
-    loadChildren: () => import('./monnaies/monnaies.module').then( m => m.MonnaiesPageModule)
-  },
-  {
-    path: 'tva',
-    loadChildren: () => import('./tva/tva.module').then( m => m.TVAPageModule)
-  },
+
+
+
 
 ];
 

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class HomePage {
 
   constructor(private router : Router) {}
-  cansel(){
+  cancel(){
     this.router.navigate(['mainhome'])
   }
 
