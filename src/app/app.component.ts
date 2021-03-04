@@ -20,4 +20,7 @@ export class AppComponent {
   addpros(){
     this.router.navigate(['prospect'])
   }
+  param(){
+    this.router.navigate(['parametre'])
+  }
 }

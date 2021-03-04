@@ -27,6 +27,14 @@ const routes: Routes = [
     path: 'parametre',
     loadChildren: () => import('./parametre/parametre.module').then( m => m.ParametrePageModule)
   },
+  {
+    path: 'monnaies',
+    loadChildren: () => import('./monnaies/monnaies.module').then( m => m.MonnaiesPageModule)
+  },
+  {
+    path: 'tva',
+    loadChildren: () => import('./tva/tva.module').then( m => m.TVAPageModule)
+  },
 
 ];
 
