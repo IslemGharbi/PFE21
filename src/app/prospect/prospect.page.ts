@@ -9,6 +9,7 @@ import {Router} from '@angular/router';
 })
 export class ProspectPage implements OnInit {
 
+  addPros:any = {}
   constructor(private myService: ListsService,private router:Router ) { }
 
   ngOnInit() {
@@ -19,5 +20,8 @@ secteurs=this.myService.secteurs
 monnaies=this.myService.monnaies
 cansel(){
   this.router.navigate(['mainhome'])
+}
+aaddPros(){
+  console.log(this.addPros)
 }
 }

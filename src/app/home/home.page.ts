@@ -7,10 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
+  addUser:any =  {} ;
   constructor(private router : Router) {}
   cancel(){
     this.router.navigate(['mainhome'])
   }
+aaddUser(){
+console.log(this.addUser)
+}
 
 }
