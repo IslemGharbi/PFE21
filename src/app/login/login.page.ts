@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -8,10 +9,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  loginn:any ={}
 
-  constructor(private router : Router) { }
+  constructor(private router : Router,private http : HttpClient) { }
   login(){
-    this.router.navigate(['mainhome'])
+    console.log(this.loginn)
   }
 
   ngOnInit() {

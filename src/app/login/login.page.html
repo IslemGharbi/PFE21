@@ -15,25 +15,26 @@
             <ion-card-title>Login</ion-card-title>
           </ion-card-header>
           <ion-card-content>
+            <form #loginform=ngForm >
             <ion-item>
               <ion-label position="floating" color="dark">Nom</ion-label>
-              <ion-input type="text"></ion-input>
+              <ion-input type="text" [(ngModel)]="loginn.nom" name="nom" required></ion-input>
             </ion-item>
             <ion-item>
               <ion-label position="floating" color="dark">Prenom</ion-label>
-              <ion-input type="text"></ion-input>
+              <ion-input type="text" [(ngModel)]="loginn.prenom" name="prenom" required></ion-input>
             </ion-item>
             <ion-item>
               <ion-label position="floating" color="dark">Mot de passe</ion-label>
-              <ion-input type="password"></ion-input>
+              <ion-input type="password" [(ngModel)]="loginn.password" name="mot de passe" required></ion-input>
             </ion-item>
 
           <ion-item>
-            <ion-button fill="solid" slot="end" color="dark" (click)="login()">Login <ion-icon name="arrow-forward-outline"></ion-icon></ion-button>
+            <ion-button fill="solid" slot="end" color="dark" (click)="login()" [disabled]="!loginform.valid">Login <ion-icon name="arrow-forward-outline"></ion-icon></ion-button>
 
           </ion-item>
 
-
+            </form>
 
 
 

@@ -39,4 +39,7 @@ inPlaning(){
 inProduit(){
   this.router.navigate(['mainhome/produits'])
 }
+inLogin(){
+  this.router.navigate(['login'])
+}
 }
