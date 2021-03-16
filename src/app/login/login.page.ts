@@ -13,7 +13,11 @@ export class LoginPage implements OnInit {
 
   constructor(private router : Router,private http : HttpClient) { }
   login(){
-    console.log(this.loginn)
+   return this.http.post('http://127.0.0.1:8000/api/getUtilisateurById',this.loginn).subscribe(
+     data => console.log(data),
+     error => console.log(error)
+
+   )
   }
 
   ngOnInit() {

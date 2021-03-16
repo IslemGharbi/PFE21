@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./mainhome.page.scss'],
 })
 export class MainhomePage implements OnInit {
-
+  select ='Produit';
   constructor(private router : Router) { }
 
   ngOnInit() {
@@ -42,4 +42,6 @@ inProduit(){
 inLogin(){
   this.router.navigate(['login'])
 }
+
+
 }

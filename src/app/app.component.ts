@@ -10,9 +10,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
 
   constructor(private router : Router) {}
-  openLog(){
-    this.router.navigate(['login'])
-  }
+
   add(){
     this.router.navigate(['home'])
   }

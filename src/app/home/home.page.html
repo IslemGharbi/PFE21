@@ -25,11 +25,11 @@
             </ion-item>
             <ion-item>
               <ion-label position="floating" color="dark">Login </ion-label>
-              <ion-input [(ngModel)]="addUser.password" name="password" type="password"></ion-input>
+              <ion-input [(ngModel)]="addUser.password" name="login" type="password"></ion-input>
             </ion-item>
             <ion-item>
               <ion-label position="floating" color="dark">Verification Login</ion-label>
-              <ion-input type="password"></ion-input>
+              <ion-input type="password" [(ngModel)]="addUser.verifLog" name="verification_login"></ion-input>
             </ion-item>
             <ion-item>
               <ion-label color="dark">Profil</ion-label>
