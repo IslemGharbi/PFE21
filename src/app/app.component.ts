@@ -11,13 +11,5 @@ export class AppComponent {
 
   constructor(private router : Router) {}
 
-  add(){
-    this.router.navigate(['home'])
-  }
-  addpros(){
-    this.router.navigate(['prospect'])
-  }
-  param(){
-    this.router.navigate(['parametres'])
-  }
+
 }
