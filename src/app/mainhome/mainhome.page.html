@@ -13,11 +13,15 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" color="medium" >
   <ion-grid fixed>
     <ion-row>
       <ion-col size ="12" >
          <ion-segment [(ngModel)]="select" scrollable color="danger">
+          <ion-segment-button value="Home">
+            <ion-label>Home</ion-label>
+
+           </ion-segment-button>
            <ion-segment-button value="Produit">
             <ion-label>Produit</ion-label>
 
@@ -63,6 +67,58 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+
+  <div *ngIf="select == 'Home' ">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-md="10" offset-md="1">
+          <ion-card>
+            <ion-card-header color="dark ">
+              <ion-card-title>Home</ion-card-title>
+            </ion-card-header>
+            <ion-card-content >
+            <br>
+            <br>
+          <div class="title">
+              <h1>Bienvenue</h1></div>
+              <br>
+              <h5>
+                FMS est une société spécialisée dans l’ingénierie de la maintenance de tous les types d’équipements dans divers secteurs :
+                l’industrie, l’agro-alimentaire, l’agriculture, le transport, le matériel roulant lourd, la santé, le tourisme, etc.
+                Ayant une grande expérience acquise auprès de plusieurs sociétés et groupes industriels de renommés national et international,
+                FMS s’est intéressée à apporter aux entreprises des méthodes modernes et efficaces pour l’amélioration des performances et des compétences techniques.
+                Ces méthodes ont été issues de la parfaite connaissance du tissu industriel et ont fait leurs preuves de succès et de rentabilité,
+                d’autant plus qu’elles visent l’amélioration de l’efficacité totale de l’équipement de production en termes de quantité, de qualité, de coût, de sécurité et de protection de l’environnement.
+              </h5>
+<br><br>
+
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <div>
+                    <h3>Adreese:</h3><br>
+                   <b> Siège social : </b>13,rue Ammar Ibn yesser Cité Ennozha 2090, MORNAG, BEN AROUS<br><br>
+                   <b>Bureau :</b> Av. Habib BOURGUIBA Immeuble EZZAHRA CENTER Bloc B, App. B34, 2034 EZZAHRA, BEN AROUS
+                  </div>
+                </ion-col>
+                <ion-col>
+                  <div >
+                    <h3>Contact:</h3><br>
+                    <ion-icon name="call-outline" slot="icon-only"></ion-icon>  +216 71 300 547 | 79 394 207<br>
+                    <ion-icon name="mail-outline" slot="icon-only"></ion-icon> contact@fms-tn.com<br>
+                    <ion-icon name="globe-outline" slot="icon-only"></ion-icon> www.fms-tn.com
+                  </div>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
 
 <div *ngIf="select == 'Commande' ">
   <ion-grid>
@@ -192,4 +248,28 @@
 
 
 
+
+
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar color="secondary">
+
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="logo-instagram"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="logo-skype"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Made by Daa10</ion-title>
+
+  </ion-toolbar>
+</ion-footer>

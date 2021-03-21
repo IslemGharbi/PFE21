@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./mainhome.page.scss'],
 })
 export class MainhomePage implements OnInit {
-  select ='Produit';
+  select ='Home';
   constructor(private router : Router) { }
 
   ngOnInit() {
