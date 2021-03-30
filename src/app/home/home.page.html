@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="danger">
-    <ion-title size="large" >
+    <ion-title href="mainhome" size="large" >
       FMS
     </ion-title>
   </ion-toolbar>
@@ -25,17 +25,18 @@
             </ion-item>
             <ion-item>
               <ion-label position="floating" color="dark">Login </ion-label>
-              <ion-input [(ngModel)]="addUser.password" name="login" type="password"></ion-input>
+              <ion-input [(ngModel)]="addUser.login" name="login" type="password"></ion-input>
             </ion-item>
             <ion-item>
               <ion-label position="floating" color="dark">Verification Login</ion-label>
-              <ion-input type="password" [(ngModel)]="addUser.verifLog" name="verification_login"></ion-input>
+              <ion-input type="password" [(ngModel)]="addUser.verification_login" name="verification_login"></ion-input>
             </ion-item>
             <ion-item>
               <ion-label color="dark">Profil</ion-label>
               <ion-select [(ngModel)]="addUser.profil" name="profil" placeholder="Select Profils">
-                <ion-select-option value="1">Profil1</ion-select-option>
-                <ion-select-option value="2">Profil2</ion-select-option>
+                <ion-select-option value="Admin">Admin</ion-select-option>
+                <ion-select-option value="profil 1">Profil 1</ion-select-option>
+                <ion-select-option value="profil 2">Profil 2</ion-select-option>
               </ion-select>
             </ion-item>
             <ion-item>
@@ -46,25 +47,15 @@
                 <ion-select-option value="Bloqué">Bloqué</ion-select-option>
               </ion-select>
             </ion-item>
-            <ion-item>
-              <ion-label position="floating" color="dark">Gestion du compte</ion-label>
-              <ion-input [(ngModel)]="addUser.gestionDuCompte" name="gestion du compte" type="text"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label position="floating" color="dark">Date du validite du compte</ion-label>
-              <ion-input [(ngModel)]="addUser.date" name="date du validation du compte" type="date" value="0000-00-00"></ion-input>
-            </ion-item>
+
+
             <ion-item>
               <ion-label position="floating" color="dark">Fréquence de renouvellement du Login</ion-label>
               <ion-input [(ngModel)]="addUser.frl" name="frl" type="text"></ion-input>
             </ion-item>
-            <ion-item>
-             <ion-label color="dark">Admin</ion-label>
-             <ion-checkbox [(ngModel)]="addUser.admin" name="admin" color="danger"></ion-checkbox>
 
-            </ion-item>
             <ion-item>
-              <ion-button fill="solid" slot="end" color="success" (click)="aaddUser()">Ajouter <ion-icon name="person-add-outline"></ion-icon></ion-button>
+              <ion-button fill="solid" slot="end" color="success" (click)="aaddUser()" (click)="alerts()" href="gestion-users">Ajouter <ion-icon name="person-add-outline"></ion-icon></ion-button>
               <ion-button fill="outline" slot="start" color="danger" (click)="cancel()"><ion-icon name="arrow-back-outline"></ion-icon> Cancel </ion-button>
             </ion-item>
 

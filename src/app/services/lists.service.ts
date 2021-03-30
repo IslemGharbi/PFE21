@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -9,7 +10,13 @@ export class ListsService {
   public secteurs : string[];
   public monnaies  :string[];
 
-  constructor() {
+  constructor(private http: HttpClient)
+{
+
+
+
+
+
     this.pays=[
       'tunisia'
     ]
@@ -30,6 +37,16 @@ export class ListsService {
     ]
 
 
+
+  }
+  getUtilisateurs(){
+    return this.http.get('http://127.0.0.1:8000/api/utilisateur');
+  }
+  deleteUsers(id){
+    return this.http.delete('http://127.0.0.1:8000/api/deleteUtilisateur/'+id)
+  }
+  userDetail(id){
+    return this.http.get('http://127.0.0.1:8000/api/utilisateur/'+id)
 
   }
 }

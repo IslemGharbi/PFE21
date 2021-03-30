@@ -31,6 +31,14 @@ const routes: Routes = [
     path: 'parametres',
     loadChildren: () => import('./parametres/parametres.module').then( m => m.ParametresPageModule)
   },
+  {
+    path: 'gestion-prospect',
+    loadChildren: () => import('./gestion-prospect/gestion-prospect.module').then( m => m.GestionProspectPageModule)
+  },
+  {
+    path: 'gestion-users',
+    loadChildren: () => import('./gestion-users/gestion-users.module').then( m => m.GestionUsersPageModule)
+  },
 
 
 

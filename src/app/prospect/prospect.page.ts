@@ -19,7 +19,7 @@ regimes=this.myService.regimes
 secteurs=this.myService.secteurs
 monnaies=this.myService.monnaies
 cansel(){
-  this.router.navigate(['mainhome'])
+  this.router.navigate(['gestion-users'])
 }
 aaddPros(){
   console.log(this.addPros)
