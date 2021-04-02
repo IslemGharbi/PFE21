@@ -19,6 +19,10 @@ getDetails(id){
 
 }
 
+modify(id){
+  this.router.navigate(['gestion-users/modifier-users',id])
+}
+
 
 
 async alert(){

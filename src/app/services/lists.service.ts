@@ -49,4 +49,7 @@ export class ListsService {
     return this.http.get('http://127.0.0.1:8000/api/utilisateur/'+id)
 
   }
+  modifyUser(id,utilisateurs){
+    return this.http.put('http://127.0.0.1:8000/api/updateUtilisateur/'+id,utilisateurs)
+  }
 }

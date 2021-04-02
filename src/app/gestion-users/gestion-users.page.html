@@ -31,7 +31,7 @@
                   <ion-item-option color="danger" (click)="alert()" (click)="delete(i)" (click)="deleteData(utilisateur.id)" ><ion-icon name="close"></ion-icon></ion-item-option>
                 </ion-item-options>
                 <ion-item-options side="start" >
-                  <ion-item-option color="primary" >Modifier</ion-item-option>
+                  <ion-item-option color="primary" (click)="modify(utilisateur.id)" >Modifier</ion-item-option>
                   <ion-item-option color="tertiary" (click)="getDetails(utilisateur.id)">Détail</ion-item-option>
                 </ion-item-options>
               </ion-item-sliding>

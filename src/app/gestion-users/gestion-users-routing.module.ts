@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'users-details/:id',
     loadChildren: () => import('./users-details/users-details.module').then( m => m.UsersDetailsPageModule)
+  },
+  {
+    path: 'modifier-users/:id',
+    loadChildren: () => import('./modifier-users/modifier-users.module').then( m => m.ModifierUsersPageModule)
   }
 ];
 

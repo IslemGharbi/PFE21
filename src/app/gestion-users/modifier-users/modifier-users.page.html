@@ -1,0 +1,68 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-title href="mainhome" size="large" >
+      FMS
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+        <ion-card >
+          <ion-card-header color="dark ">
+            <ion-card-title>Modifier utilisateur</ion-card-title>
+          </ion-card-header>
+          <ion-card-content >
+            <ion-item>
+              <ion-label position="floating" color="dark">Nom</ion-label>
+              <ion-input [(ngModel)]="utilisateurs.nom"  name="nom" type="text"></ion-input>
+            </ion-item>
+             <ion-item>
+              <ion-label position="floating" color="dark">Prenom</ion-label>
+              <ion-input [(ngModel)]="utilisateurs.prenom"  name="prenom" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating" color="dark">Login </ion-label>
+              <ion-input [(ngModel)]="utilisateurs.login"  name="login" type="text"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label color="dark">Profil</ion-label>
+              <ion-select [(ngModel)]="utilisateurs.profil"  name="profil" placeholder="Select Profils">
+                <ion-select-option value="Admin">Admin</ion-select-option>
+                <ion-select-option value="profil 1">Profil 1</ion-select-option>
+                <ion-select-option value="profil 2">Profil 2</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-label color="dark">Etat</ion-label>
+              <ion-select [(ngModel)]="utilisateurs.etat" name="etat"  placeholder="Select Etat">
+                <ion-select-option value="Actif">Actif</ion-select-option>
+                <ion-select-option value="Inactif">Inactif</ion-select-option>
+                <ion-select-option value="Bloqué">Bloqué</ion-select-option>
+              </ion-select>
+            </ion-item>
+
+
+            <ion-item>
+              <ion-label position="floating" color="dark">Fréquence de renouvellement du Login</ion-label>
+              <ion-input [(ngModel)]="utilisateurs.frl" name="frl" type="text"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-button fill="solid" slot="end" color="success" (click)="modifyUser()" >Modifier <ion-icon name="person-add-outline"></ion-icon></ion-button>
+              <ion-button fill="outline" slot="start" color="danger" href="gestion-users"><ion-icon name="arrow-back-outline"></ion-icon> Annuler </ion-button>
+            </ion-item>
+
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+</ion-content>
