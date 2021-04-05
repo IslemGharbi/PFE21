@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ListsService } from '../services/lists.service';
+import { TokenService } from '../services/token.service';
 
 
 @Component({
@@ -9,15 +11,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  loginn:any ={}
+  loginn:any ={};
+  public error = null
 
-  constructor(private router : Router,private http : HttpClient) { }
+  constructor(private router : Router,private http : HttpClient,private ListsService : ListsService,private token : TokenService) { }
   login(){
-   return this.http.post('http://127.0.0.1:8000/api/getUtilisateurById',this.loginn).subscribe(
-     data => console.log(data),
-     error => console.log(error)
+   this.ListsService.login(this.loginn).subscribe(
+     data => this.dataHandle(data),
+     error => this.errorHandle(error)
 
    )
+  }
+  errorHandle(error){
+     this.error=error.error.error;
+  }
+
+  dataHandle(data){
+this.token.handle(data.access_token)
   }
 
   ngOnInit() {

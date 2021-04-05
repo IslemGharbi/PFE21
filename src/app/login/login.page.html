@@ -20,17 +20,18 @@
           </ion-card-header>
           <ion-card-content>
             <form #loginform=ngForm >
+              <ion-chip color="danger" [hidden]="!error">
+                <ion-label> {{error}}</ion-label>
+               </ion-chip>
             <ion-item>
-              <ion-label position="floating" color="dark">Nom</ion-label>
-              <ion-input type="text" [(ngModel)]="loginn.nom" name="nom" required></ion-input>
+
+              <ion-label position="floating" color="dark">Email</ion-label>
+              <ion-input type="text" [(ngModel)]="loginn.email" name="email" required></ion-input>
             </ion-item>
-            <ion-item>
-              <ion-label position="floating" color="dark">Prénom</ion-label>
-              <ion-input type="text" [(ngModel)]="loginn.prenom" name="prenom" required></ion-input>
-            </ion-item>
+
             <ion-item>
               <ion-label position="floating" color="dark">Mot de passe</ion-label>
-              <ion-input type="password" [(ngModel)]="loginn.password" name="mot de passe" required></ion-input>
+              <ion-input type="password" [(ngModel)]="loginn.pasdword" name="password" required></ion-input>
             </ion-item>
 
           <ion-item>
