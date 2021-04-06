@@ -10,17 +10,25 @@ import { AlertController } from '@ionic/angular';
 })
 export class HomePage {
   addUser:any =  {} ;
+  public error:any =[];
   constructor(private router : Router,private http :HttpClient,private alertController : AlertController) {}
   cancel(){
     this.router.navigate(['gestion-users'])
   }
 aaddUser(){
-  return this.http.post('http://127.0.0.1:8000/api/addUtilisateur',this.addUser).subscribe(
-    data => console.log(data),
-    error => console.log(error)
+  return this.http.post('http://127.0.0.1:8000/api/auth/signup',this.addUser).subscribe(
+    data => {
+      this.alerts(),this.cancel()
+    },
+    error => this.handleError(error)
 
-  )
+  );
 }
+
+handleError(error){
+  this.error= error.error.errors;
+}
+
 async alerts(){
   const alert =await this.alertController.create({
 header : 'alert',

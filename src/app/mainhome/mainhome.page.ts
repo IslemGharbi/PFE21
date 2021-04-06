@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+import { AuthService } from '../services/auth.service';
+import { TokenService } from '../services/token.service';
 
 @Component({
   selector: 'app-mainhome',
@@ -7,10 +10,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./mainhome.page.scss'],
 })
 export class MainhomePage implements OnInit {
+  public loggedIn : boolean;
   select ='Home';
-  constructor(private router : Router) { }
+  constructor(private router : Router,private auth : AuthService,private token : TokenService,private alertController : AlertController) { }
 
   ngOnInit() {
+this.auth.authStatus.subscribe(value => this.loggedIn=value);
+
   }
 inCommande(){
 this.router.navigate(['mainhome/commandes'])
@@ -44,4 +50,18 @@ inLogin(){
 }
 
 
+logout(event:MouseEvent){
+  this.token.remove();
+  event.preventDefault();
+  this.auth.changeAuthStatus(false);
+
+}
+
+async alerts(){
+  const alert =await this.alertController.create({
+header : 'alert',
+message: 'logged out'
+
+  });
+  await alert.present();}
 }

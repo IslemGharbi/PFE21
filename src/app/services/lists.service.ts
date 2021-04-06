@@ -40,7 +40,7 @@ export class ListsService {
 
   }
   getUtilisateurs(){
-    return this.http.get('http://127.0.0.1:8000/api/utilisateur');
+    return this.http.get('http://127.0.0.1:8000/api/user');
   }
   deleteUsers(id){
     return this.http.delete('http://127.0.0.1:8000/api/deleteUtilisateur/'+id)

@@ -15,22 +15,51 @@
             <ion-card-title>Ajouter</ion-card-title>
           </ion-card-header>
           <ion-card-content >
+
             <ion-item>
+
               <ion-label position="floating" color="dark">Nom</ion-label>
               <ion-input [(ngModel)]="addUser.nom" name="nom" type="text"></ion-input>
             </ion-item>
+            <ion-chip color="danger" [hidden]="!error.nom">
+              <ion-label> {{error.nom}}</ion-label>
+             </ion-chip>
+
             <ion-item>
+
               <ion-label position="floating" color="dark">Prenom</ion-label>
               <ion-input [(ngModel)]="addUser.prenom" name="prenom" type="text"></ion-input>
             </ion-item>
+            <ion-chip color="danger" [hidden]="!error.prenom">
+              <ion-label> {{error.prenom}}</ion-label>
+             </ion-chip>
+
             <ion-item>
-              <ion-label position="floating" color="dark">Login </ion-label>
-              <ion-input [(ngModel)]="addUser.login" name="login" type="password"></ion-input>
+
+              <ion-label position="floating" color="dark">Email </ion-label>
+              <ion-input [(ngModel)]="addUser.email" name="email" type="text"></ion-input>
             </ion-item>
+            <ion-chip color="danger" [hidden]="!error.email">
+              <ion-label> {{error.email}}</ion-label>
+             </ion-chip>
+
             <ion-item>
-              <ion-label position="floating" color="dark">Verification Login</ion-label>
-              <ion-input type="password" [(ngModel)]="addUser.verification_login" name="verification_login"></ion-input>
+
+              <ion-label position="floating" color="dark">Mot de passe</ion-label>
+              <ion-input type="password" [(ngModel)]="addUser.password" name="password"></ion-input>
             </ion-item>
+            <ion-chip color="danger" [hidden]="!error.password">
+              <ion-label> {{error.password}}</ion-label>
+             </ion-chip>
+
+            <ion-item>
+              <ion-label position="floating" color="dark">Confirmation mot de passe</ion-label>
+              <ion-input type="password" [(ngModel)]="addUser.password_confirmation" name="password_confirmation"></ion-input>
+            </ion-item>
+            <ion-chip color="danger" [hidden]="!error.password_confirmation">
+              <ion-label> {{error.password_confirmation}}</ion-label>
+             </ion-chip>
+
             <ion-item>
               <ion-label color="dark">Profil</ion-label>
               <ion-select [(ngModel)]="addUser.profil" name="profil" placeholder="Select Profils">
@@ -39,6 +68,10 @@
                 <ion-select-option value="profil 2">Profil 2</ion-select-option>
               </ion-select>
             </ion-item>
+            <ion-chip color="danger" [hidden]="!error.profil">
+              <ion-label> {{error.profil}}</ion-label>
+             </ion-chip>
+
             <ion-item>
               <ion-label color="dark">Etat</ion-label>
               <ion-select [(ngModel)]="addUser.etat" name="etat" placeholder="Select Etat">
@@ -47,15 +80,20 @@
                 <ion-select-option value="Bloqué">Bloqué</ion-select-option>
               </ion-select>
             </ion-item>
+            <ion-chip color="danger" [hidden]="!error.etat">
+              <ion-label> {{error.etat}}</ion-label>
+             </ion-chip>
 
 
             <ion-item>
               <ion-label position="floating" color="dark">Fréquence de renouvellement du Login</ion-label>
               <ion-input [(ngModel)]="addUser.frl" name="frl" type="text"></ion-input>
             </ion-item>
-
+            <ion-chip color="danger" [hidden]="!error.frl">
+              <ion-label> {{error.frl}}</ion-label>
+             </ion-chip>
             <ion-item>
-              <ion-button fill="solid" slot="end" color="success" (click)="aaddUser()" (click)="alerts()" href="gestion-users">Ajouter <ion-icon name="person-add-outline"></ion-icon></ion-button>
+              <ion-button fill="solid" slot="end" color="success" (click)="aaddUser()"  >Ajouter <ion-icon name="person-add-outline"></ion-icon></ion-button>
               <ion-button fill="outline" slot="start" color="danger" (click)="cancel()"><ion-icon name="arrow-back-outline"></ion-icon> Cancel </ion-button>
             </ion-item>
 
