@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import {  SnotifyService } from 'ng-snotify';
+import { ToastController } from '@ionic/angular';
+
 import { ListsService } from '../services/lists.service';
 
 @Component({
@@ -16,7 +17,8 @@ export class ResponsePasswordResetPage implements OnInit {
     private route : ActivatedRoute,
     private list : ListsService,
     private router :Router,
-    private notify : SnotifyService
+    private toastController : ToastController
+
   ) {
 route.queryParams.subscribe(params =>{
   this.loginn.resetToken = params['token']
@@ -27,22 +29,15 @@ route.queryParams.subscribe(params =>{
    submit(){
 this.list.changePassword(this.loginn).subscribe(
   data => this.handleResponse(data),
-  error => console.log(error)
+  error => this.handleError(error)
 )
    }
 
 
    handleResponse(data){
-     let _router = this.router;
-     this.notify.confirm('Fini ! maintenant connectez-vous avec votre nouveau mot de passe !',{
-       buttons:[
-         {text: 'okay',
-         action : toster  =>{_router.navigate(['login']) ,
-        this.notify.remove(toster.id)
-      }
-    }
-       ]
-     })
+
+     this.Alert()
+
 
 
    }
@@ -55,7 +50,25 @@ this.list.changePassword(this.loginn).subscribe(
 
 
 
-  ngOnInit() {
-  }
 
-}
+
+  ngOnInit() {}
+
+
+  async Alert() {
+    const toast = await this.toastController.create({
+      message: 'Fini ! maintenant connectez-vous avec votre nouveau mot de passe !',
+
+      color : "success",
+      buttons: [
+        {
+          side: 'start',
+
+          text: 'Okay',
+          handler: () => {this.router.navigate(['login'])
+
+        }}]
+      })
+    toast.present();
+
+  }}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SnotifyModule, SnotifyService } from 'ng-snotify';
+import { LoadingController, ToastController } from '@ionic/angular';
+
 import { ListsService } from '../services/lists.service';
 
 @Component({
@@ -11,22 +12,44 @@ export class RequestPasswordResetPage implements OnInit {
   loginn:any ={};
   constructor(
     private listService : ListsService,
-    private notify : SnotifyService
+    private toastController : ToastController,
+    private loadingController : LoadingController
+
     ) { }
 
   ngOnInit() {
   }
 
   password(){
+    this.Loading()
     this.listService.SendPasswordResetLink(this.loginn).subscribe(
       data => this.handleResponse(data),
-      error => this.notify.error(error.error.error)
+      error => (error.error.error)
     )
   }
 
   handleResponse(res){
-    console.log(res)
+
+    this.Alert(res)
     this.loginn.email= null
   }
 
+  async Alert(res) {
+    const toast = await this.toastController.create({
+      message: res.data,
+      duration: 5000,
+      color : "success"
+    });
+    toast.present();
+
 }
+
+
+
+async Loading() {
+  const loading = await this.loadingController.create({
+    cssClass: 'my-custom-class',
+    message: 'Please wait...',
+    duration: 3000
+  });
+  await loading.present()}}
