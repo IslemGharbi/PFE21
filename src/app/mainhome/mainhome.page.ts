@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular';
 import { AuthService } from '../services/auth.service';
 import { TokenService } from '../services/token.service';
 
@@ -12,7 +12,7 @@ import { TokenService } from '../services/token.service';
 export class MainhomePage implements OnInit {
   public loggedIn : boolean;
   select ='Home';
-  constructor(private router : Router,private auth : AuthService,private token : TokenService,private alertController : AlertController) { }
+  constructor(private router : Router,private auth : AuthService,private token : TokenService,private toastController : ToastController) { }
 
   ngOnInit() {
 this.auth.authStatus.subscribe(value => this.loggedIn=value);
@@ -57,11 +57,11 @@ logout(event:MouseEvent){
 
 }
 
-async alerts(){
-  const alert =await this.alertController.create({
-header : 'alert',
-message: 'logged out'
-
+async Alert() {
+  const toast = await this.toastController.create({
+    message: 'Logged out!',
+    duration: 2000,
+    color : "danger"
   });
-  await alert.present();}
+  toast.present()}
 }

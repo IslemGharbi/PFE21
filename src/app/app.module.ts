@@ -7,7 +7,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import {​​ HttpClientModule }​​ from '@angular/common/http';
-
+import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
 
 
 
@@ -16,8 +16,8 @@ import {​​ HttpClientModule }​​ from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, FormsModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule],
-  providers: [{ provide: RouteReuseStrategy,   useClass: IonicRouteStrategy }],
+  imports: [BrowserModule, SnotifyModule,FormsModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule],
+  providers: [  { provide: 'SnotifyToastConfig', useValue: ToastDefaults},SnotifyService,{ provide: RouteReuseStrategy,   useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

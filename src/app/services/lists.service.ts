@@ -18,7 +18,7 @@ export class ListsService {
 
 
     this.pays=[
-      'tunisia'
+      'tunisie'
     ]
     this.regimes=[
       '40',
@@ -31,8 +31,8 @@ export class ListsService {
     ]
     this.monnaies=[
       'TND',
-      '€',
-      '$'
+      'EURO',
+      'DOLLAR'
 
     ]
 
@@ -40,13 +40,13 @@ export class ListsService {
 
   }
   getUtilisateurs(){
-    return this.http.get('http://127.0.0.1:8000/api/user');
+    return this.http.get('http://127.0.0.1:8000/api/getUser');
   }
   deleteUsers(id){
     return this.http.delete('http://127.0.0.1:8000/api/deleteUtilisateur/'+id)
   }
   userDetail(id){
-    return this.http.get('http://127.0.0.1:8000/api/utilisateur/'+id)
+    return this.http.get('http://127.0.0.1:8000/api/getUtilisateurById/'+id)
 
   }
   modifyUser(id,utilisateurs){
@@ -54,5 +54,12 @@ export class ListsService {
   }
   login(id){
     return this.http.post('http://127.0.0.1:8000/api/auth/login/',id)
+  }
+  SendPasswordResetLink(data){
+    return this.http.post('http://127.0.0.1:8000/api/auth/sendPasswordResetLink',data)
+  }
+
+  changePassword(data){
+    return this.http.post('http://127.0.0.1:8000/api/auth/resetPassword',data)
   }
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
+import { ListsService } from '../services/lists.service';
 
 @Component({
   selector: 'app-gestion-prospect',
@@ -7,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GestionProspectPage implements OnInit {
 
-  constructor() { }
+  constructor(private listService:ListsService, private router : Router,public toastController : ToastController) { }
 
   ngOnInit() {
   }

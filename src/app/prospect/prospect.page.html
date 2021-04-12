@@ -21,17 +21,17 @@
           <ion-card-content>
             <ion-item>
               <ion-label position="floating" color="dark">Code</ion-label>
-              <ion-input [(ngModel)]="addPros.Code" name="code" type="text"></ion-input>
+              <ion-input [(ngModel)]="addPros.codeP" name="codeP" type="text"></ion-input>
             </ion-item>
 
             <ion-item>
               <ion-label position="floating" color="dark">Raison Social</ion-label>
-              <ion-input [(ngModel)]="addPros.RaisonSocial" name="RaisonSocial" type="text"></ion-input>
+              <ion-input [(ngModel)]="addPros.raisonsocialeP" name="raisonsocialeP" type="text"></ion-input>
             </ion-item>
 
             <ion-item>
               <ion-label color="dark">Type</ion-label>
-              <ion-select [(ngModel)]="addPros.Type" name="Type" placeholder="Select Type">
+              <ion-select [(ngModel)]="addPros.typeP" name="Type" placeholder="Select Type">
                 <ion-select-option value="Prospect">Prospect</ion-select-option>
                 <ion-select-option value="Client">Client</ion-select-option>
 
@@ -39,21 +39,25 @@
             </ion-item>
 
             <ion-item>
-              <ion-label color="dark">Actif</ion-label>
-              <ion-checkbox [(ngModel)]="addPros.Actif" name="Actif" color="danger"></ion-checkbox>
+              <ion-label color="dark">Etat</ion-label>
+              <ion-select [(ngModel)]="addPros.etatP" name="etatP" placeholder="Select Profils">
+                <ion-select-option value="Actif">Actif</ion-select-option>
+                <ion-select-option value="inactif">Inactif</ion-select-option>
+
+              </ion-select>
 
              </ion-item>
              <ion-item>
               <ion-label position="floating" color="dark">Adresse</ion-label>
-              <ion-input type="text" [(ngModel)]="addPros.Adresse" name="Adresse"></ion-input>
+              <ion-input type="text" [(ngModel)]="addPros.adresseP" name="adresseP"></ion-input>
             </ion-item>
             <ion-item>
               <ion-label position="floating" color="dark">Code postal</ion-label>
-              <ion-input [(ngModel)]="addPros.CodePostal" name="codePostal" type="text"></ion-input>
+              <ion-input [(ngModel)]="addPros.codepostalP" name="codepostalP" type="text"></ion-input>
             </ion-item>
             <ion-item>
               <ion-label color="dark">Ville</ion-label>
-              <ion-select [(ngModel)]="addPros.Ville" name="ville" placeholder="Select Ville">
+              <ion-select [(ngModel)]="addPros.villeP" name="villeP" placeholder="Select Ville">
                 <ion-select-option value="Ariana">Ariana</ion-select-option>
                 <ion-select-option value="Beja">Beja</ion-select-option>
                 <ion-select-option value="Ben Arous">Ben Arous</ion-select-option>
@@ -86,7 +90,7 @@
             </ion-item>
             <ion-item>
               <ion-label color="dark">Pays</ion-label>
-              <ion-select [(ngModel)]="addPros.pays" name="pays" placeholder="Select Pays">
+              <ion-select [(ngModel)]="addPros.paysP" name="paysP" placeholder="Select Pays">
                 <ion-select-option *ngFor=" let pay of pays" value="{{pay}}">
                   {{pay}}
                 </ion-select-option>
@@ -96,15 +100,15 @@
 
           <ion-item>
            <ion-label position="floating" color="dark">Matricule fiscal</ion-label>
-           <ion-input [(ngModel)]="addPros.matriculeFiscal" name="matriculeFiscal" type="text"></ion-input>
+           <ion-input [(ngModel)]="addPros.matriculefiscaleP" name="matriculefiscaleP" type="text"></ion-input>
          </ion-item>
          <ion-item>
           <ion-label position="floating" color="dark">Registre du commerce</ion-label>
-          <ion-input [(ngModel)]="addPros.registreDuCommerce" name="Registre Du Commerce" type="text"></ion-input>
+          <ion-input [(ngModel)]="addPros.registrecommerceP" name="Registre Du Commerce" type="text"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label color="dark">Regime</ion-label>
-          <ion-select [(ngModel)]="addPros.Regime" name="Regime" placeholder="Select regime">
+          <ion-select [(ngModel)]="addPros.regimeP" name="Regime" placeholder="Select regime">
             <ion-select-option *ngFor=" let regime of regimes" value="{{regime}}">
               {{regime}}
             </ion-select-option>
@@ -113,7 +117,7 @@
         </ion-item>
         <ion-item>
           <ion-label color="dark">Form juridique</ion-label>
-          <ion-select [(ngModel)]="addPros.formJuridique" name="formJuridique" placeholder="Select Form">
+          <ion-select [(ngModel)]="addPros.formjuridiqueP" name="formJuridique" placeholder="Select Form">
             <ion-select-option value="Entreprise individuelle">Entreprise individuelle</ion-select-option>
             <ion-select-option value="SARL">SARL</ion-select-option>
             <ion-select-option value="SA">SA</ion-select-option>
@@ -124,7 +128,7 @@
 
         <ion-item>
           <ion-label color="dark">Secteur</ion-label>
-          <ion-select [(ngModel)]="addPros.Secteur" name="secteur" placeholder="Select Secteur">
+          <ion-select [(ngModel)]="addPros.secteurP" name="secteur" placeholder="Select Secteur">
             <ion-select-option *ngFor=" let secteur of secteurs" value="{{secteur}}">
               {{secteur}}
             </ion-select-option>
@@ -134,12 +138,12 @@
 
       <ion-item>
        <ion-label position="floating" color="dark">Activité</ion-label>
-       <ion-input [(ngModel)]="addPros.activite" name="activité" type="text"></ion-input>
+       <ion-input [(ngModel)]="addPros.activiteP" name="activité" type="text"></ion-input>
      </ion-item>
 
      <ion-item>
       <ion-label color="dark">TVA</ion-label>
-      <ion-select [(ngModel)]="addPros.tva" name="tva" placeholder="Select TVA">
+      <ion-select [(ngModel)]="addPros.tvaP" name="tva" placeholder="Select TVA">
         <ion-select-option value="Assujetti">Assujetti</ion-select-option>
         <ion-select-option value="Non assujetti">Non assujetti</ion-select-option>
         <ion-select-option value="Exonoré">Exonoré</ion-select-option>
@@ -149,32 +153,32 @@
     </ion-item>
     <ion-item>
       <ion-label position="floating" color="dark">Responsable</ion-label>
-      <ion-input [(ngModel)]="addPros.Responsable" name="responsable" type="text"></ion-input>
+      <ion-input [(ngModel)]="addPros.responsableP" name="responsable" type="text"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating" color="dark">Telephone fixe</ion-label>
-      <ion-input [(ngModel)]="addPros.TelFix" name="telephone fixe" type="number"></ion-input>
+      <ion-input [(ngModel)]="addPros.telephonefixeP" name="telephone fixe" type="number"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating" color="dark">Telephone mobile</ion-label>
-      <ion-input [(ngModel)]="addPros.TelMob" name="Telephone mobile" type="number"></ion-input>
+      <ion-input [(ngModel)]="addPros.telephonemobileP" name="Telephone mobile" type="number"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating" color="dark">Telecopie</ion-label>
-      <ion-input [(ngModel)]="addPros.Telecopie" name="Telecopie" type="Text"></ion-input>
+      <ion-input [(ngModel)]="addPros.telecopieP" name="Telecopie" type="Text"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating" color="dark">Site Web</ion-label>
-      <ion-input [(ngModel)]="addPros.SiteWeb" name="SiteWeb" type="url"></ion-input>
+      <ion-input [(ngModel)]="addPros.sitewebP" name="SiteWeb" type="url"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating" color="dark">Adresse Electronic</ion-label>
-      <ion-input [(ngModel)]="addPros.AdresseElectronic" name="adresse electronic" type="Email"></ion-input>
+      <ion-input [(ngModel)]="addPros.adresseelectroniqueP" name="adresse electronic" type="Email"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label color="dark">Monnaie</ion-label>
-      <ion-select [(ngModel)]="addPros.Monnaie" name="monnaie" placeholder="Select Monnaie">
+      <ion-select [(ngModel)]="addPros.monnaieP" name="monnaie" placeholder="Select Monnaie">
         <ion-select-option *ngFor=" let monnaie of monnaies" value="{{monnaie}}">
           {{monnaie}}
         </ion-select-option>
@@ -182,8 +186,8 @@
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-button fill="outline" slot="start" color="danger" (click)="cansel()"><ion-icon name="arrow-back-outline"></ion-icon> Cancel </ion-button>
-      <ion-button fill="solid" slot="end" color="success" (click)="aaddPros()" ><ion-icon name="person-add-outline" ></ion-icon>Ajouter </ion-button>
+      <ion-button fill="outline" slot="start" color="danger" (click)="cancel()"><ion-icon name="arrow-back-outline"></ion-icon> Cancel </ion-button>
+      <ion-button fill="solid" slot="end" color="success" (click)="aadPros()" ><ion-icon name="person-add-outline" ></ion-icon>Ajouter </ion-button>
     </ion-item>
 
 

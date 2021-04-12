@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular';
 import { ListsService } from '../services/lists.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { ListsService } from '../services/lists.service';
 export class GestionUsersPage implements OnInit {
   public utilisateurs:any =[];
 
-  constructor(private listService:ListsService, private router : Router,public alertController : AlertController ) { }
+  constructor(private listService:ListsService, private router : Router,public toastController : ToastController) { }
 
 getDetails(id){
   this.router.navigate(['gestion-users/users-details',id]);
@@ -25,31 +25,25 @@ modify(id){
 
 
 
-async alert(){
-  const alert =await this.alertController.create({
-header : 'alert',
-message : ' Utilisateur est suprimé ',
-
+async Alert() {
+  const toast = await this.toastController.create({
+    message: 'Utilisateur est supprimé !',
+    duration: 2000,
+    color : "danger"
   });
-  await alert.present();
+  toast.present();
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-  ngOnInit() {this.listService.getUtilisateurs().subscribe(data => this.utilisateurs = data)
-
+  ngOnInit() {
+    this.listService.getUtilisateurs().subscribe(data => this.utilisateurs = data)
   }
+
+
+
+
+
+
   deleteData(id){
 this.listService.deleteUsers(id).subscribe(res=>{this.utilisateurs})
   }

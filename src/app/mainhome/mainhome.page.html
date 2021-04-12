@@ -4,10 +4,10 @@
 
 
     <ion-buttons slot="end">
-      <ion-button  *ngIf="loggedIn" (click)="alerts()" (click)='logout($event)'> <ion-icon slot="icon-only" name="log-out-outline" ></ion-icon> </ion-button>
+      <ion-button  *ngIf="loggedIn" (click)="Alert()" (click)='logout($event)'> <ion-icon slot="icon-only" name="log-out-outline" ></ion-icon> </ion-button>
 
       <ion-button (click)="inLogin()" *ngIf="!loggedIn"> <ion-icon slot="icon-only" name="log-in-outline" ></ion-icon> </ion-button>
-        <ion-menu-button menu="admin"  slot="start"></ion-menu-button>
+        <ion-menu-button *ngIf="loggedIn" menu="admin"  slot="start"></ion-menu-button>
 
 
     </ion-buttons>
@@ -27,35 +27,35 @@
            <ion-segment-button value="Produit">
             <ion-label>Produit</ion-label>
 
-           </ion-segment-button>
-           <ion-segment-button value="Commande">
+           </ion-segment-button >
+           <ion-segment-button *ngIf="loggedIn" value="Commande">
             <ion-label>Commandes</ion-label>
 
            </ion-segment-button>
-           <ion-segment-button value="Contact">
+           <ion-segment-button *ngIf="loggedIn" value="Contact">
             <ion-label>Contacts</ion-label>
 
            </ion-segment-button>
-           <ion-segment-button value="Echange">
+           <ion-segment-button *ngIf="loggedIn" value="Echange">
             <ion-label>Echanges</ion-label>
 
            </ion-segment-button>
-           <ion-segment-button value="fichier">
+           <ion-segment-button  *ngIf="loggedIn" value="fichier">
             <ion-label>Fichier Assosié</ion-label>
 
            </ion-segment-button>
 
-           <ion-segment-button value="Intervention">
+           <ion-segment-button *ngIf="loggedIn" value="Intervention">
             <ion-label>Intervensions</ion-label>
 
            </ion-segment-button>
 
-           <ion-segment-button  value="Offre">
+           <ion-segment-button  *ngIf="loggedIn" value="Offre">
             <ion-label>Offres</ion-label>
 
            </ion-segment-button>
 
-           <ion-segment-button  value="Planning">
+           <ion-segment-button *ngIf="loggedIn" value="Planning">
             <ion-label  >Plannings</ion-label>
 
            </ion-segment-button>

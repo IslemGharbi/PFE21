@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular';
 import { AuthService } from '../services/auth.service';
 import { ListsService } from '../services/lists.service';
 import { TokenService } from '../services/token.service';
@@ -16,11 +16,11 @@ export class LoginPage implements OnInit {
   loginn:any ={};
   public error = null
 
-  constructor(private alertController : AlertController,private auth : AuthService ,private router : Router,private http : HttpClient,private ListsService : ListsService,private token : TokenService) { }
+  constructor(private toastController : ToastController,private auth : AuthService ,private router : Router,private http : HttpClient,private ListsService : ListsService,private token : TokenService) { }
   login(){
    this.ListsService.login(this.loginn).subscribe(
      data =>{ this.dataHandle(data),
-      this.router.navigate(['mainhome']),this.alerts()},
+      this.router.navigate(['mainhome']),this.Alert()},
      error => this.errorHandle(error)
 
    )
@@ -35,13 +35,13 @@ this.token.handle(data.access_token)
 this.auth.changeAuthStatus(true);
   }
 
-  async alerts(){
-    const alert =await this.alertController.create({
-  header : 'alert',
-  message: 'logged in'
-
+  async Alert() {
+    const toast = await this.toastController.create({
+      message: 'login avec succès !',
+      duration: 2000,
+      color : "success"
     });
-    await alert.present();}
+    toast.present();}
 
 
   ngOnInit() {
