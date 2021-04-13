@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertController, ToastController } from '@ionic/angular';
+import {  ToastController } from '@ionic/angular';
 import { ListsService } from '../services/lists.service';
 
 @Component({
@@ -48,9 +48,9 @@ async Alert() {
 this.listService.deleteUsers(id).subscribe(res=>{this.utilisateurs})
   }
 
-  detailUser(id){
-    this.listService.userDetail(id).subscribe(res=>{this.utilisateurs})
-  }
+  // detailUser(id){
+  //   this.listService.userDetail(id).subscribe(res=>{this.utilisateurs})
+  // }
 
   delete(i){
     this.utilisateurs.splice(i,1)

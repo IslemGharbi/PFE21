@@ -1,0 +1,89 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-title  size="large" >
+      FMS
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button href="mainhome"><ion-icon slot="icon-only" name="home-outline" ></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<br><br>
+<ion-content>
+  <ion-content [fullscreen]="true">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-md="6" offset-md="3">
+          <ion-card>
+            <ion-card-header color="dark ">
+              <ion-card-title>Detail des Prospects</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-list>
+                <ion-item>
+                  <ion-label><b>Code :</b> {{prospects.codeP}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>PRaison sociale: </b>{{prospects.raisonsocialeP}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label ><b>Type : </b>{{prospects.typeP }}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>Etat :</b> {{prospects.etatP}} </ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>Adresse :</b> {{prospects.adresseP}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>Ville :</b> {{prospects.villeP}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>Pays :</b> {{prospects.paysP}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>Matricule fiscale :</b> {{prospects.matriculefiscaleP}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>registre commerce :</b> {{prospects.registrecommerceP}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b> Regime :</b> {{prospects.regimeP}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>Forme juridique :</b> {{prospects.formejuridiqueP}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>Secteur :</b> {{prospects.secteurP}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>TVA :</b> {{prospects.tvaP}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>Responsable :</b> {{prospects.responsableP}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>Telephone fixe :</b> {{prospects.telephonefixeP}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>Telephone mobile :</b> {{prospects.telephonemobileP}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>Telecopie :</b> {{prospects.telecopieP}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>Site web :</b> {{prospects.sitewebP}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>Adresse électronique :</b> {{prospects.adresseelectroniqueP}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>Monnaie :</b> {{prospects.monnaieP}}</ion-label>
+                </ion-item>
+
+
+                <ion-item>
+                  <ion-label><b>Date de validation :</b> {{prospects.created_at}}</ion-label>
+                </ion-item>
+              </ion-list>
+

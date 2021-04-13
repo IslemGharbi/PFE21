@@ -18,11 +18,13 @@ export class ListsService {
 
 
     this.pays=[
-      'tunisie'
+      'tunisie',
+      'france'
     ]
     this.regimes=[
       '40',
       '48'
+
     ]
     this.secteurs=[
       'agroalimentaire ',
@@ -35,6 +37,7 @@ export class ListsService {
       'DOLLAR'
 
     ]
+
 
 
 
@@ -62,4 +65,28 @@ export class ListsService {
   changePassword(data){
     return this.http.post('http://127.0.0.1:8000/api/auth/resetPassword',data)
   }
+
+
+
+
+
+  // prospect
+
+  getProspect(){
+    return this.http.get('http://127.0.0.1:8000/api/getProspect')
+  }
+
+  prosDetail(id){
+    return this.http.get('http://127.0.0.1:8000/api/getProspectById/'+id)
+
+  }
+
+  deletePros(id){
+    return this.http.delete('http://127.0.0.1:8000/api/deleteProspect/'+id)
+  }
+
+  modifyPros(id,prospects){
+    return this.http.put('http://127.0.0.1:8000/api/updateProspect/'+id,prospects)
+  }
+
 }
