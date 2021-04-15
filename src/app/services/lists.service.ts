@@ -118,9 +118,111 @@ export class ListsService {
     return this.http.get('http://127.0.0.1:8000/api/getRegimeById/'+id)
 
   }
-  modifyRegime(id,monnaie){
-    return this.http.put('http://127.0.0.1:8000/api/updateRegime/'+id,monnaie)
+  modifyRegime(id,regime){
+    return this.http.put('http://127.0.0.1:8000/api/updateRegime/'+id,regime)
   }
+
+  //secteur
+
+  getSecteur(){
+    return this.http.get('http://127.0.0.1:8000/api/getSecteur')
+  }
+  deleteSecteur(id){
+    return this.http.delete('http://127.0.0.1:8000/api/deleteSecteur/'+id)
+  }
+  detailSecteur(id){
+    return this.http.get('http://127.0.0.1:8000/api/getSecteurById/'+id)
+
+  }
+  modifySecteur(id,secteur){
+    return this.http.put('http://127.0.0.1:8000/api/updateSecteur/'+id,secteur)
+  }
+
+//produit
+
+  getProduit(){
+    return this.http.get('http://127.0.0.1:8000/api/getProduit')
+  }
+  deleteProduit(id){
+    return this.http.delete('http://127.0.0.1:8000/api/deleteProduit/'+id)
+  }
+  detailProduit(id){
+    return this.http.get('http://127.0.0.1:8000/api/getProduitById/'+id)
+
+  }
+  modifyProduit(id,produit){
+    return this.http.put('http://127.0.0.1:8000/api/updateProduit/'+id,produit)
+  }
+
+//TVA
+
+getTva(){
+  return this.http.get('http://127.0.0.1:8000/api/getTva')
+}
+deleteTva(id){
+  return this.http.delete('http://127.0.0.1:8000/api/deleteTva/'+id)
+}
+detailTva(id){
+  return this.http.get('http://127.0.0.1:8000/api/getTvaById/'+id)
+
+}
+modifyTva(id,Tva){
+  return this.http.put('http://127.0.0.1:8000/api/updateTva/'+id,Tva)
+}
+
+//pays
+
+getPays(){
+  return this.http.get('http://127.0.0.1:8000/api/getPays')
+}
+deletePays(id){
+  return this.http.delete('http://127.0.0.1:8000/api/deletePays/'+id)
+}
+detailPays(id){
+  return this.http.get('http://127.0.0.1:8000/api/getPaysById/'+id)
+
+}
+modifyPays(id,Pays){
+  return this.http.put('http://127.0.0.1:8000/api/updatePays/'+id,Pays)
+}
+
+
+//delegation
+
+getDelegation(){
+  return this.http.get('http://127.0.0.1:8000/api/getDelegation')
+}
+deleteDelegation(id){
+  return this.http.delete('http://127.0.0.1:8000/api/deleteDelegation/'+id)
+}
+detailDelegation(id){
+  return this.http.get('http://127.0.0.1:8000/api/getDelegationById/'+id)
+
+}
+modifyDelegation(id,Delegation){
+  return this.http.put('http://127.0.0.1:8000/api/updateDelegation/'+id,Delegation)
+}
+
+
+
+//Formjuridique
+
+getForm(){
+  return this.http.get('http://127.0.0.1:8000/api/getFormejuridique')
+}
+deleteForm(id){
+  return this.http.delete('http://127.0.0.1:8000/api/deleteFormejuridique/'+id)
+}
+detailForm(id){
+  return this.http.get('http://127.0.0.1:8000/api/getFormejuridiqueById/'+id)
+
+}
+modifyForm(id,Formjuridique){
+  return this.http.put('http://127.0.0.1:8000/api/updateFormejuridique/'+id,Formjuridique)
+}
+
+
+
 
 
 }

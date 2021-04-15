@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-title size="large" >
+      FMS
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button href="mainhome"><ion-icon slot="icon-only" name="home-outline" ></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+        <ion-card>
+          <ion-card-header color="dark ">
+            <ion-card-title>datail des TVA</ion-card-title>
+          </ion-card-header>
+          <ion-list>
+            <ion-item>
+              <ion-label><b>Type:</b> {{tvas.type_tva}}</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label><b>Valeur: </b>{{tvas.valeur_tva}}</ion-label>
+            </ion-item>
