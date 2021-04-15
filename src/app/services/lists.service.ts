@@ -1,3 +1,4 @@
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -10,7 +11,7 @@ export class ListsService {
   public secteurs : string[];
   public monnaies  :string[];
 
-  constructor(private http: HttpClient)
+  constructor(private http : HttpClient)
 {
 
 
@@ -88,5 +89,38 @@ export class ListsService {
   modifyPros(id,prospects){
     return this.http.put('http://127.0.0.1:8000/api/updateProspect/'+id,prospects)
   }
+
+  // monnaies
+  getMonnaie(){
+    return this.http.get('http://127.0.0.1:8000/api/getMonnaie')
+  }
+  deleteMonnaie(id){
+    return this.http.delete('http://127.0.0.1:8000/api/deleteMonnaie/'+id)
+  }
+  detailMonnaie(id){
+    return this.http.get('http://127.0.0.1:8000/api/getMonnaieById/'+id)
+
+  }
+  modifyMonnaie(id,monnaie){
+    return this.http.put('http://127.0.0.1:8000/api/updateMonnaie/'+id,monnaie)
+  }
+
+//regime
+
+
+  getRegime(){
+    return this.http.get('http://127.0.0.1:8000/api/getRegime')
+  }
+  deleteRegime(id){
+    return this.http.delete('http://127.0.0.1:8000/api/deleteRegime/'+id)
+  }
+  detailRegime(id){
+    return this.http.get('http://127.0.0.1:8000/api/getRegimeById/'+id)
+
+  }
+  modifyRegime(id,monnaie){
+    return this.http.put('http://127.0.0.1:8000/api/updateRegime/'+id,monnaie)
+  }
+
 
 }

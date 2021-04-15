@@ -24,11 +24,13 @@ export class ProspectPage implements OnInit {
   }
 
   ngOnInit() {
+
+    this.myService.getMonnaie().subscribe(data => this.monnaies = data)
   }
 pays=this.myService.pays
 regimes=this.myService.regimes
 secteurs=this.myService.secteurs
-monnaies=this.myService.monnaies
+monnaies
 cancel(){
   this.router.navigate(['gestion-prospect'])
 }

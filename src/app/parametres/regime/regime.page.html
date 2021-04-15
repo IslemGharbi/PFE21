@@ -17,3 +17,20 @@
           <ion-card-header color="dark ">
             <ion-card-title>Paramétre regime</ion-card-title>
           </ion-card-header>
+          <ion-list>
+            <ion-item-sliding *ngFor=" let regime of regimes; let i = index">
+              <ion-item>
+                <ion-label>{{regime.type_regime}}    </ion-label>
+              </ion-item>
+              <ion-item-options side="end" >
+
+
+                <ion-item-option color="danger" (click)="Alert()" (click)="delete(i)" (click)="deleteMonnaie(regime.id)" ><ion-icon name="close"></ion-icon></ion-item-option>
+              </ion-item-options>
+              <ion-item-options side="start" >
+                <ion-item-option color="primary" (click)="modify(regime.id)" >Modifier</ion-item-option>
+                <ion-item-option color="tertiary" (click)="getDetails(regime.id)">Détail</ion-item-option>
+              </ion-item-options>
+            </ion-item-sliding>
+            <ion-button href="parametres/regime/ajouter" shape="round" color="success" expand="block"  > Ajouter un regime</ion-button>
+

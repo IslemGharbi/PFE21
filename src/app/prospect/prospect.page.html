@@ -179,8 +179,8 @@
     <ion-item>
       <ion-label color="dark">Monnaie</ion-label>
       <ion-select [(ngModel)]="addPros.monnaieP" name="monnaie" placeholder="Select Monnaie">
-        <ion-select-option *ngFor=" let monnaie of monnaies" value="{{monnaie}}">
-          {{monnaie}}
+        <ion-select-option *ngFor=" let monnaie of monnaies" value="{{monnaie.type_monnaie}}">
+          {{monnaie.type_monnaie}}
         </ion-select-option>
 
       </ion-select>

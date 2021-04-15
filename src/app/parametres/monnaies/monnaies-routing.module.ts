@@ -7,6 +7,18 @@ const routes: Routes = [
   {
     path: '',
     component: MonnaiesPage
+  },
+  {
+    path: 'details/:id',
+    loadChildren: () => import('./details/details.module').then( m => m.DetailsPageModule)
+  },
+  {
+    path: 'modifier/:id',
+    loadChildren: () => import('./modifier/modifier.module').then( m => m.ModifierPageModule)
+  },
+  {
+    path: 'ajouter',
+    loadChildren: () => import('./ajouter/ajouter.module').then( m => m.AjouterPageModule)
   }
 ];
 

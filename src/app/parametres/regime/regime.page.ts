@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
+import { ListsService } from 'src/app/services/lists.service';
 
 @Component({
   selector: 'app-regime',
@@ -6,10 +9,40 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./regime.page.scss'],
 })
 export class RegimePage implements OnInit {
+  public regimes:any =[];
+  constructor(
+    private listService:ListsService,
+    private router : Router,
+    public toastController : ToastController
+  ) { }
 
-  constructor() { }
+  getDetails(id){
+    this.router.navigate(['parametres/regime/details',id]);
+  }
+
+  deleteMonnaie(id){
+    this.listService.deleteRegime(id).subscribe(res=>{this.regimes})
+      }
+      delete(i){
+        this.regimes.splice(i,1)
+      }
+
+
+      async Alert() {
+        const toast = await this.toastController.create({
+          message: 'regime est supprimé !',
+          duration: 2000,
+          color : "danger"
+        });
+        toast.present();}
+
+  modify(id){
+    this.router.navigate(['parametres/regime/modifier',id])
+  }
+
 
   ngOnInit() {
+    this.listService.getRegime().subscribe(data => this.regimes = data)
   }
 
 }
