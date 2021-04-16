@@ -223,6 +223,45 @@ modifyForm(id,Formjuridique){
 
 
 
+//type societe
+
+
+getSociete(){
+  return this.http.get('http://127.0.0.1:8000/api/getSociete')
+}
+deleteSociete(id){
+  return this.http.delete('http://127.0.0.1:8000/api/deleteSociete/'+id)
+}
+detailSociete(id){
+  return this.http.get('http://127.0.0.1:8000/api/getSocieteById/'+id)
+
+}
+modifySociete(id,Societ){
+  return this.http.put('http://127.0.0.1:8000/api/updateSociete/'+id,Societ)
+}
+
+//intervention
+
+
+
+getInter(){
+  return this.http.get('http://127.0.0.1:8000/api/getIntervention')
+}
+deleteInter(id){
+  return this.http.delete('http://127.0.0.1:8000/api/deleteIntervention/'+id)
+}
+detailInter(id){
+  return this.http.get('http://127.0.0.1:8000/api/getInterventionById/'+id)
+
+}
+modifyInter(id,Societ){
+  return this.http.put('http://127.0.0.1:8000/api/updateIntervention/'+id,Societ)
+}
+
+
+
+
+
 
 
 }

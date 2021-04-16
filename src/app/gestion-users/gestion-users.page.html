@@ -20,7 +20,8 @@
             <ion-card-title>Gestion des Utilisateurs</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            <ion-list>
+            <ion-searchbar showCancelButton  placeholder="chercher les utilisateurs "  (ionChange)="searsh($event)"></ion-searchbar>
+            <ion-list >
               <ion-item-sliding *ngFor=" let utilisateur of utilisateurs; let i = index">
                 <ion-item>
                   <ion-label>{{utilisateur.nom}}    {{utilisateur.prenom}} </ion-label>

@@ -11,7 +11,13 @@ import { ListsService } from '../services/lists.service';
 export class GestionUsersPage implements OnInit {
   public utilisateurs:any =[];
 
-  constructor(private listService:ListsService, private router : Router,public toastController : ToastController) { }
+
+
+  constructor(
+    private listService:ListsService, private router : Router,public toastController : ToastController
+    ) {
+
+    }
 
 getDetails(id){
   this.router.navigate(['gestion-users/users-details',id]);
@@ -36,9 +42,13 @@ async Alert() {
 
 
   ngOnInit() {
-    this.listService.getUtilisateurs().subscribe(data => this.utilisateurs = data)
+      this.get()
   }
 
+
+get(){
+  this.listService.getUtilisateurs().subscribe(data => this.utilisateurs = data)
+}
 
 
 
@@ -57,4 +67,21 @@ this.listService.deleteUsers(id).subscribe(res=>{this.utilisateurs})
   }
 
 
-}
+  searsh(event:any){
+
+    const val = event.target.value;
+    this.utilisateurs
+    if(!val ){
+      return; }
+this.utilisateurs= this.utilisateurs.filter((item: any)=>{
+  if(item.nom && val){
+  return (item.nom.toLowerCase().indexOf(val.toLowerCase()) > -1);}
+})
+
+
+
+
+  }}
+
+
+

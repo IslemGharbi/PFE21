@@ -76,6 +76,7 @@ const routes: Routes = [
     path: 'type-societe',
     loadChildren: () => import('./type-societe/type-societe.module').then( m => m.TypeSocietePageModule)
   }
+
 ];
 
 @NgModule({
