@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {  ToastController } from '@ionic/angular';
+import {  AlertController, ToastController } from '@ionic/angular';
 import { ListsService } from '../services/lists.service';
 
 @Component({
@@ -10,11 +10,11 @@ import { ListsService } from '../services/lists.service';
 })
 export class GestionUsersPage implements OnInit {
   public utilisateurs:any =[];
-
+textBus = '';
 
 
   constructor(
-    private listService:ListsService, private router : Router,public toastController : ToastController
+    private listService:ListsService, private router : Router,public toastController : ToastController,private alertController : AlertController
     ) {
 
     }
@@ -58,9 +58,7 @@ get(){
 this.listService.deleteUsers(id).subscribe(res=>{this.utilisateurs})
   }
 
-  // detailUser(id){
-  //   this.listService.userDetail(id).subscribe(res=>{this.utilisateurs})
-  // }
+
 
   delete(i){
     this.utilisateurs.splice(i,1)
@@ -69,19 +67,38 @@ this.listService.deleteUsers(id).subscribe(res=>{this.utilisateurs})
 
   searsh(event:any){
 
-    const val = event.target.value;
-    this.utilisateurs
-    if(!val ){
-      return; }
-this.utilisateurs= this.utilisateurs.filter((item: any)=>{
-  if(item.nom && val){
-  return (item.nom.toLowerCase().indexOf(val.toLowerCase()) > -1);}
-})
+this.textBus = event.detail.value;
+ }
+
+
+ async presentAlertConfirm(id,i) {
+  const alert = await this.alertController.create({
+    cssClass: 'my-custom-class',
+    header: 'Attention !',
+    message: 'Etes vous sur de suprimer cet utilisateur !',
+    buttons: [
+      {
+        text: 'Non',
+        role: 'cancel',
+        cssClass: 'secondary',
+        handler: (blah) => {
+         ;
+        }
+      }, {
+        text: 'Oui',
+        handler: () => {
+          this.deleteData(id),this.delete(i),this.Alert()
+
+        }
+      }
+    ]
+  });
+  await alert.present();
 
 
 
 
-  }}
+}
 
-
+}
 

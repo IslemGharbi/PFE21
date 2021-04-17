@@ -7,13 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { GestionUsersPageRoutingModule } from './gestion-users-routing.module';
 
 import { GestionUsersPage } from './gestion-users.page';
+import { PipesModule } from '../pipes/pipes.module';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    GestionUsersPageRoutingModule
+    GestionUsersPageRoutingModule,
+    PipesModule
+
   ],
   declarations: [GestionUsersPage]
 })

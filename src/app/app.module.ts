@@ -7,6 +7,8 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import {​​ HttpClientModule }​​ from '@angular/common/http';
+import { PipesModule } from './pipes/pipes.module';
+
 
 
 
@@ -14,9 +16,9 @@ import {​​ HttpClientModule }​​ from '@angular/common/http';
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ],
   entryComponents: [],
-  imports: [BrowserModule, FormsModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule],
+  imports: [BrowserModule, FormsModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule,PipesModule],
   providers: [  { provide: RouteReuseStrategy,   useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
