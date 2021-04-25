@@ -10,6 +10,7 @@ import { ListsService } from '../services/lists.service';
 })
 export class RequestPasswordResetPage implements OnInit {
   loginn:any ={};
+  error: any
   constructor(
     private listService : ListsService,
     private toastController : ToastController,
@@ -24,7 +25,7 @@ export class RequestPasswordResetPage implements OnInit {
     this.Loading()
     this.listService.SendPasswordResetLink(this.loginn).subscribe(
       data => this.handleResponse(data),
-      error => (error.error.error)
+      error => this.errorHandle(error)
     )
   }
 
@@ -45,6 +46,8 @@ export class RequestPasswordResetPage implements OnInit {
 }
 
 
+errorHandle(error){
+  this.error=error.error.error;}
 
 async Loading() {
   const loading = await this.loadingController.create({

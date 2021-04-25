@@ -91,8 +91,8 @@
             <ion-item>
               <ion-label color="dark">Pays</ion-label>
               <ion-select [(ngModel)]="addPros.paysP" name="paysP" placeholder="Select Pays">
-                <ion-select-option *ngFor=" let pay of pays" value="{{pay}}">
-                  {{pay}}
+                <ion-select-option *ngFor=" let pay of pays" value="{{pay.nom_pays}}">
+                  {{pay.nom_pays}}
                 </ion-select-option>
 
               </ion-select>
@@ -109,8 +109,8 @@
         <ion-item>
           <ion-label color="dark">Regime</ion-label>
           <ion-select [(ngModel)]="addPros.regimeP" name="Regime" placeholder="Select regime">
-            <ion-select-option *ngFor=" let regime of regimes" value="{{regime}}">
-              {{regime}}
+            <ion-select-option *ngFor=" let regime of regimes" value="{{regime.type_regime}}">
+              {{regime.type_regime}}
             </ion-select-option>
 
           </ion-select>
@@ -129,8 +129,8 @@
         <ion-item>
           <ion-label color="dark">Secteur</ion-label>
           <ion-select [(ngModel)]="addPros.secteurP" name="secteur" placeholder="Select Secteur">
-            <ion-select-option *ngFor=" let secteur of secteurs" value="{{secteur}}">
-              {{secteur}}
+            <ion-select-option *ngFor=" let secteur of secteurs" value="{{secteur.type_secteur}}">
+              {{secteur.type_secteur}}
             </ion-select-option>
 
           </ion-select>
@@ -144,10 +144,10 @@
      <ion-item>
       <ion-label color="dark">TVA</ion-label>
       <ion-select [(ngModel)]="addPros.tvaP" name="tva" placeholder="Select TVA">
-        <ion-select-option value="Assujetti">Assujetti</ion-select-option>
-        <ion-select-option value="Non assujetti">Non assujetti</ion-select-option>
-        <ion-select-option value="Exonoré">Exonoré</ion-select-option>
-        <ion-select-option value="En suspension">En suspension</ion-select-option>
+        <ion-select-option *ngFor="let tva of TVAs " value="{{tva.type_tva}}" >
+          {{tva.type_tva}}
+        </ion-select-option>
+
 
       </ion-select>
     </ion-item>

@@ -22,13 +22,14 @@
             <ion-card-title>Gestion des Prospects</ion-card-title>
           </ion-card-header>
           <ion-card-content>
+            <ion-searchbar showCancelButton animated  placeholder="chercher les prospects ! "  (ionChange)="searsh($event)"></ion-searchbar>
             <ion-list>
-              <ion-item-sliding *ngFor=" let prospect of prospects; let i = index">
+              <ion-item-sliding *ngFor=" let prospect of prospects | search: textBus:'codeP'; let i = index">
                 <ion-item>
                   <ion-label>{{prospect.codeP}}     </ion-label>
                 </ion-item>
                 <ion-item-options side="end" >
-                  <ion-item-option color="danger" (click)="Alert()" (click)="delete(i)" (click)="deletePros(prospect.id)" ><ion-icon name="close"></ion-icon></ion-item-option>
+                  <ion-item-option color="danger" (click)="presentAlertConfirm(prospect.id,i)" ><ion-icon name="close"></ion-icon></ion-item-option>
                 </ion-item-options>
                 <ion-item-options side="start" >
                   <ion-item-option color="primary" (click)="modify(prospect.id)" >Modifier</ion-item-option>

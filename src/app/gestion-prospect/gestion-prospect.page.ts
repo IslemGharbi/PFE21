@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToastController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular';
 import { ListsService } from '../services/lists.service';
 
 @Component({
@@ -11,7 +11,8 @@ import { ListsService } from '../services/lists.service';
 export class GestionProspectPage implements OnInit {
 
   public prospects:any =[];
-  constructor(private listService:ListsService, private router : Router,public toastController : ToastController) { }
+  textBus='';
+  constructor(private listService:ListsService, private router : Router,public toastController : ToastController, private alertController : AlertController) { }
 
   getDetailsPros(id){
     this.router.navigate(['gestion-prospect/prospect-details',id]);
@@ -27,7 +28,10 @@ modify(id){
   }
 
 
+  searsh(event:any){
 
+    this.textBus = event.detail.value;
+     }
 
 
 
@@ -36,23 +40,50 @@ modify(id){
 
     this.listService.getProspect().subscribe(data => this.prospects = data)
   }
+
+
   deletePros(id){
     this.listService.deletePros(id).subscribe(res=>{this.prospects})
       }
+
+
       async Alert() {
         const toast = await this.toastController.create({
           message: 'Prospect est supprimé !',
           duration: 2000,
           color : "danger"
         });
-        toast.present();
+        toast.present();}
+
+
+        async presentAlertConfirm(id,i) {
+          const alert = await this.alertController.create({
+            cssClass: 'my-custom-class',
+            header: 'Attention !',
+            message: 'Etes vous sur de suprimer ce Prospect ?!',
+            buttons: [
+              {
+                text: 'Non',
+                role: 'cancel',
+                cssClass: 'secondary',
+                handler: (blah) => {
+                 ;
+                }
+              }, {
+                text: 'Oui',
+                handler: () => {
+                  this.deletePros(id),this.delete(i),this.Alert()
+
+                }
+              }
+            ]
+          });
+          await alert.present();
 
 
 
 
+        }
 
-  // detailPros(id){
-  //   this.listService.prosDetail(id).subscribe(res=>{this.prospects})
-  // }
 
-}}
+}

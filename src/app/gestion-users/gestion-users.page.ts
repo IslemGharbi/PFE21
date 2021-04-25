@@ -14,7 +14,10 @@ textBus = '';
 
 
   constructor(
-    private listService:ListsService, private router : Router,public toastController : ToastController,private alertController : AlertController
+    private listService:ListsService,
+    private router : Router,
+    private toastController : ToastController,
+    private alertController : AlertController
     ) {
 
     }

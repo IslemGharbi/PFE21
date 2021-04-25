@@ -1,3 +1,23 @@
-ion-content.background{
-  --background: url(../../assets/img/back.jpg)
+// page-login{
+
+
+// .bg-image{
+// background-image: url('../../assets/img/wp2570965.jpg') ;
+// background-repeat: no-repeat;
+// background-position: center;
+// background-size: contain;
+// }
+// .no-scroll .scroll-content{
+//   overflow: hidden;
+// }
+
+
+// }
+
+ion-content{
+  --background:url('../../assets/img/back.png');
+  --background-repeat: no-repeat;
+--background-position: center;
+ --background-size: contain;
 }
+

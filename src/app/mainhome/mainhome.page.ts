@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
 import { AuthService } from '../services/auth.service';
+import { ListsService } from '../services/lists.service';
 import { TokenService } from '../services/token.service';
 
 @Component({
@@ -12,10 +13,14 @@ import { TokenService } from '../services/token.service';
 export class MainhomePage implements OnInit {
   public loggedIn : boolean;
   select ='Home';
-  constructor(private router : Router,private auth : AuthService,private token : TokenService,private toastController : ToastController) { }
+  pros: any = [];
+
+
+  constructor(private router : Router,private auth : AuthService,private token : TokenService,private toastController : ToastController,private listService : ListsService) { }
 
   ngOnInit() {
 this.auth.authStatus.subscribe(value => this.loggedIn=value);
+this.listService.getProspect().subscribe(data => this.pros=data)
 
   }
 inCommande(){
@@ -64,4 +69,11 @@ async Alert() {
     color : "danger"
   });
   toast.present()}
+
+
+
+
+
+
+
 }
