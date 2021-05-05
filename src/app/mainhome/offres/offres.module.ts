@@ -8,12 +8,15 @@ import { OffresPageRoutingModule } from './offres-routing.module';
 
 import { OffresPage } from './offres.page';
 
+import { PipesModule } from 'src/app/pipes/pipes.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    OffresPageRoutingModule
+    OffresPageRoutingModule,
+    PipesModule
   ],
   declarations: [OffresPage]
 })

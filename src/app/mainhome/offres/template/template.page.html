@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-title href="mainhome" size="large" >
+      FMS
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button href="mainhome"><ion-icon slot="icon-only" name="home-outline" ></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" >
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+        <ion-card>
+          <ion-card-header color="dark ">
+            <ion-card-title>Faire un offre   </ion-card-title>
+          </ion-card-header>
+            <ion-card-content>
+              <ion-item>
+                <ion-label position="floating" color="dark">Code</ion-label>
+                <ion-input [(ngModel)]="addPros.codeP" name="codeP" type="text"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label><b>TVA :</b> {{addPros.tvaP}}</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label><b>Contact :</b> {{addPros.telephonemobileP}}  ,  {{addPros.telephonefixeP}}</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label><b>Monnaie :</b> {{addPros.monnaieP}}</ion-label>
+              </ion-item>
+
+

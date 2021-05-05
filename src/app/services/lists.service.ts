@@ -1,6 +1,7 @@
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { prospect } from '../model/prospect';
 
 @Injectable({
   providedIn: 'root'
@@ -18,26 +19,7 @@ export class ListsService {
 
 
 
-    this.pays=[
-      'tunisie',
-      'france'
-    ]
-    this.regimes=[
-      '40',
-      '48'
 
-    ]
-    this.secteurs=[
-      'agroalimentaire ',
-      'services',
-      'mecanique'
-    ]
-    this.monnaies=[
-      'TND',
-      'EURO',
-      'DOLLAR'
-
-    ]
 
 
 
@@ -78,7 +60,7 @@ export class ListsService {
   }
 
   prosDetail(id){
-    return this.http.get('http://127.0.0.1:8000/api/getProspectById/'+id)
+    return this.http.get<prospect[]>('http://127.0.0.1:8000/api/getProspectById/'+id)
 
   }
 
@@ -259,6 +241,31 @@ modifyInter(id,Societ){
 }
 
 
+//index
+
+indexMonnaie(){
+  return this.http.get('http://127.0.0.1:8000/api/indexMonnaie')
+
+}
+
+indexTva(){
+  return this.http.get('http://127.0.0.1:8000/api/indexTva')
+}
+
+indexPays(){
+  return this.http.get('http://127.0.0.1:8000/api/indexPays')
+}
+indexRegime(){
+  return this.http.get('http://127.0.0.1:8000/api/indexRegime')
+}
+
+indexSecteur(){
+  return this.http.get('http://127.0.0.1:8000/api/indexSecteur')
+}
+
+indexForm(){
+  return this.http.get('http://127.0.0.1:8000/api/indexFormejuridique')
+}
 
 
 

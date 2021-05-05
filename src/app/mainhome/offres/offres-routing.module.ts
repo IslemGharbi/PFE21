@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: OffresPage
+  },
+  {
+    path: 'template/:id',
+    loadChildren: () => import('./template/template.module').then( m => m.TemplatePageModule)
   }
 ];
 

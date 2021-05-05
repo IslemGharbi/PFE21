@@ -30,12 +30,14 @@ export class ProspectPage implements OnInit {
     this.myService.getSecteur().subscribe(data=> this.secteurs=data)
     this.myService.getRegime().subscribe(data=> this.regimes=data)
     this.myService.getTva().subscribe(data=> this.TVAs=data)
+    this.myService.getForm().subscribe(data=> this.form=data)
   }
 pays
 regimes
 secteurs
 monnaies
 TVAs
+form
 cancel(){
   this.router.navigate(['gestion-prospect'])
 }

@@ -15,6 +15,7 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content [fullscreen]="true" color="medium" >
   <ion-grid fixed>
     <ion-row>
@@ -82,7 +83,7 @@
             <br>
             <br>
           <div class="title">
-              <h1>Bienvenue</h1></div>
+              <h1>Bienvenue {{user.nom}}</h1></div>
               <br>
               <h5>
                 FMS est une société spécialisée dans l’ingénierie de la maintenance de tous les types d’équipements dans divers secteurs :
@@ -215,8 +216,7 @@
             <ion-card-title>Offres</ion-card-title>
           </ion-card-header>
 
-          <ion-button  shape="round" color="tertiary" expand="block"  > Faire un offre</ion-button>
-
+          <ion-button href="mainhome/offres"  shape="round" color="tertiary" expand="block"  > Faire un offre</ion-button>
 
         </ion-card>
       </ion-col>

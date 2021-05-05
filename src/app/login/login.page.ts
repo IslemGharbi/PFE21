@@ -30,6 +30,7 @@ export class LoginPage implements OnInit {
   }
 
   dataHandle(data){
+    localStorage.setItem('token',data.access_token)
 
 this.token.handle(data.access_token)
 this.auth.changeAuthStatus(true);

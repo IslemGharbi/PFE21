@@ -1,6 +1,8 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
+
 import { AuthService } from '../services/auth.service';
 import { ListsService } from '../services/lists.service';
 import { TokenService } from '../services/token.service';
@@ -13,50 +15,40 @@ import { TokenService } from '../services/token.service';
 export class MainhomePage implements OnInit {
   public loggedIn : boolean;
   select ='Home';
-  pros: any = [];
+
+user : any = []
+tva:any
 
 
-  constructor(private router : Router,private auth : AuthService,private token : TokenService,private toastController : ToastController,private listService : ListsService) { }
+  constructor(
+    private router : Router,
+    private auth : AuthService,
+    private Token : TokenService,
+    private toastController : ToastController,
+    private listService : ListsService,
+    private alertController : AlertController,
+    private http : HttpClient
+    ) { }
 
   ngOnInit() {
 this.auth.authStatus.subscribe(value => this.loggedIn=value);
-this.listService.getProspect().subscribe(data => this.pros=data)
 
+const headers = new HttpHeaders({
+  'Authorization' : `Bearer ${localStorage.getItem( 'token')}`
+})
+
+this.http.get('http://127.0.0.1:8000/api/currentUser',{headers}).subscribe(
+  result=> this.user = result
+)
   }
-inCommande(){
-this.router.navigate(['mainhome/commandes'])
-}
-inContact(){
-  this.router.navigate(['mainhome/contacts'])
-}
-inEchange(){
-  this.router.navigate(['mainhome/echange'])
-}
-inFich(){
-  this.router.navigate(['mainhome/fichier-assosie'])
-}
-inInterlocuteur(){
-  this.router.navigate(['mainhome/interlocuteur'])
-}
-inIntervension(){
-  this.router.navigate(['mainhome/intervensions'])
-}
-inOffre(){
-  this.router.navigate(['mainhome/offres'])
-}
-inPlaning(){
-  this.router.navigate(['mainhome/planings'])
-}
-inProduit(){
-  this.router.navigate(['mainhome/produits'])
-}
+
 inLogin(){
   this.router.navigate(['login'])
 }
 
 
 logout(event:MouseEvent){
-  this.token.remove();
+  this.Token.remove();
   event.preventDefault();
   this.auth.changeAuthStatus(false);
 
@@ -76,4 +68,8 @@ async Alert() {
 
 
 
+
+
 }
+
+
