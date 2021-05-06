@@ -11,6 +11,7 @@
 <br><br>
 <ion-content>
   <ion-content [fullscreen]="true">
+    <div *ngIf="user.profil=='Admin' ">
     <ion-grid>
       <ion-row>
         <ion-col size-md="6" offset-md="3">
@@ -57,7 +58,7 @@
                   <ion-label><b>Secteur :</b> {{prospects.secteur_id}}</ion-label>
                 </ion-item>
                 <ion-item>
-                  <ion-label><b>TVA :</b> {{prospects.tva.type_tva}}</ion-label>
+                  <ion-label><b>TVA :</b> {{prospects?.tva?.type_tva}}</ion-label>
                 </ion-item>
                 <ion-item>
                   <ion-label><b>Responsable :</b> {{prospects.responsableP}}</ion-label>
@@ -86,4 +87,23 @@
                   <ion-label><b>Date de validation :</b> {{prospects.created_at}}</ion-label>
                 </ion-item>
               </ion-list>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    </div>
 
+
+              <div *ngIf="user.profil=='profil 1' ">
+
+
+
+                <ion-text color="danger">
+                  <h1>Desolé , seul les admins sont autorisé a cette page !!  <ion-icon name="sad-outline"></ion-icon><ion-icon name="sad-outline"></ion-icon></h1>
+                </ion-text>
+
+
+
+
+                </div>

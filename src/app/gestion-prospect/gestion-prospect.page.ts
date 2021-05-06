@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
@@ -12,7 +13,8 @@ export class GestionProspectPage implements OnInit {
 
   public prospects:any =[];
   textBus='';
-  constructor(private listService:ListsService, private router : Router,public toastController : ToastController, private alertController : AlertController) { }
+  user:any={}
+  constructor(private listService:ListsService, private http : HttpClient,private router : Router,public toastController : ToastController, private alertController : AlertController) { }
 
   getDetailsPros(id){
     this.router.navigate(['gestion-prospect/prospect-details',id]);
@@ -39,6 +41,14 @@ modify(id){
   ngOnInit() {
 
     this.listService.getProspect().subscribe(data => this.prospects = data)
+    const headers = new HttpHeaders({
+      'Authorization' : `Bearer ${localStorage.getItem( 'token')}`
+    })
+
+    this.http.get('http://127.0.0.1:8000/api/currentUser',{headers}).subscribe(
+      result=> this.user = result
+    )
+
   }
 
 

@@ -7,6 +7,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <div *ngIf="user.profil=='Admin' ">
   <ion-grid>
     <ion-row>
       <ion-col size-md="6" offset-md="3">
@@ -62,6 +63,20 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+  </div>
+
+  <div *ngIf="user.profil=='profil 1' ">
+
+
+
+    <ion-text color="danger">
+      <h1>Desolé , seul les admins sont autorisé a cette page !!  <ion-icon name="sad-outline"></ion-icon><ion-icon name="sad-outline"></ion-icon></h1>
+    </ion-text>
+
+
+
+
+    </div>
 
 
 

@@ -4,10 +4,10 @@
 
 
     <ion-buttons slot="end">
-      <ion-button  *ngIf="loggedIn" (click)="Alert()" (click)='logout($event)'> <ion-icon slot="icon-only" name="log-out-outline" ></ion-icon> </ion-button>
+      <ion-button  *ngIf="loggedIn" (click)="Alert()" (click)='logout($event)'> <ion-icon slot="icon-only" name="log-out-outline" href="/mainhome" ></ion-icon> </ion-button>
 
       <ion-button (click)="inLogin()" *ngIf="!loggedIn"> <ion-icon slot="icon-only" name="log-in-outline" ></ion-icon> </ion-button>
-        <ion-menu-button *ngIf="loggedIn" menu="admin"  slot="start"></ion-menu-button>
+        <ion-menu-button *ngIf=" loggedIn"  menu="admin"  slot="start"></ion-menu-button>
 
 
     </ion-buttons>

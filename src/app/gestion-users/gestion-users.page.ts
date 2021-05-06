@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {  AlertController, ToastController } from '@ionic/angular';
@@ -11,13 +12,15 @@ import { ListsService } from '../services/lists.service';
 export class GestionUsersPage implements OnInit {
   public utilisateurs:any =[];
 textBus = '';
+user:any={}
 
 
   constructor(
     private listService:ListsService,
     private router : Router,
     private toastController : ToastController,
-    private alertController : AlertController
+    private alertController : AlertController,
+    private http : HttpClient
     ) {
 
     }
@@ -45,14 +48,29 @@ async Alert() {
 
 
   ngOnInit() {
-      this.get()
-  }
+    const headers = new HttpHeaders({
+      'Authorization' : `Bearer ${localStorage.getItem( 'token')}`
+    })
+
+    this.http.get('http://127.0.0.1:8000/api/currentUser',{headers}).subscribe(
+      result=> this.user = result
+    )
 
 
-get(){
+
+
+
+
+
+
+
+
+
+
+
   this.listService.getUtilisateurs().subscribe(data => this.utilisateurs = data)
-}
 
+  }
 
 
 

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
@@ -9,9 +9,14 @@ import { AlertController, ToastController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  addUser:any =  {} ;
+  addUser:any ={} ;
   public error:any =[];
+  user:any={}
   constructor(private router : Router,private http :HttpClient,private toastController : ToastController) {}
+
+
+
+
   cancel(){
     this.router.navigate(['gestion-users'])
   }
@@ -25,6 +30,8 @@ aaddUser(){
   );
 }
 
+
+
 handleError(error){
   this.error= error.error.errors;
 }
@@ -36,5 +43,15 @@ async Alert() {
     color : "success"
   });
   toast.present();}
+  ngOnInit(){
+    // const headers = new HttpHeaders({
+    //   'Authorization' : `Bearer ${localStorage.getItem( 'token')}`
+    // })
+
+    // this.http.get('http://127.0.0.1:8000/api/currentUser',{headers}).subscribe(
+    //   result=> this.user = result
+    // )
+
+  }
 
 }

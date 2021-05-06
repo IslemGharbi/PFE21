@@ -16,8 +16,8 @@ export class MainhomePage implements OnInit {
   public loggedIn : boolean;
   select ='Home';
 
-user : any = []
-tva:any
+user : any = {}
+
 
 
   constructor(

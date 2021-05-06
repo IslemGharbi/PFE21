@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ListsService} from '../services/lists.service';
 import {Router} from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ToastController } from '@ionic/angular';
 
 @Component({
@@ -12,6 +12,7 @@ import { ToastController } from '@ionic/angular';
 export class ProspectPage implements OnInit {
 
   addPros:any = {}
+  user:any={}
   constructor(private myService: ListsService,private router:Router ,private http : HttpClient, private toastController : ToastController) { }
   aadPros(){
     return this.http.post('http://127.0.0.1:8000/api/addProspect',this.addPros).subscribe(
@@ -31,6 +32,14 @@ export class ProspectPage implements OnInit {
     this.myService.getRegime().subscribe(data=> this.regimes=data)
     this.myService.getTva().subscribe(data=> this.TVAs=data)
     this.myService.getForm().subscribe(data=> this.form=data)
+
+    const headers = new HttpHeaders({
+      'Authorization' : `Bearer ${localStorage.getItem( 'token')}`
+    })
+
+    this.http.get('http://127.0.0.1:8000/api/currentUser',{headers}).subscribe(
+      result=> this.user = result
+    )
   }
 pays
 regimes
