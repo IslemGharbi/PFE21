@@ -13,6 +13,12 @@ export class ModifierProspectPage implements OnInit {
   id;
   public addPros:any =[];
 user:any={}
+pays
+regimes
+secteurs
+monnaies
+TVAs
+form
 
   constructor(
     private myService : ListsService,
@@ -28,6 +34,14 @@ user:any={}
 
       this.addPros=data,
     )
+    this.myService.getMonnaie().subscribe(data => this.monnaies = data)
+    this.myService.getPays().subscribe(data=> this.pays=data)
+    this.myService.getSecteur().subscribe(data=> this.secteurs=data)
+    this.myService.getRegime().subscribe(data=> this.regimes=data)
+    this.myService.getTva().subscribe(data=> this.TVAs=data)
+    this.myService.getForm().subscribe(data=> this.form=data)
+
+
     const headers = new HttpHeaders({
       'Authorization' : `Bearer ${localStorage.getItem( 'token')}`
     })
@@ -38,10 +52,7 @@ user:any={}
 
   }
 
-  pays=this.myService.pays
-regimes=this.myService.regimes
-secteurs=this.myService.secteurs
-monnaies=this.myService.monnaies
+
 
 
 cancel(){

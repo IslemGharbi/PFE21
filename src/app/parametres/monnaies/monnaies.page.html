@@ -12,6 +12,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <div *ngIf="user.etat=='Actif' ">
   <ion-grid>
     <ion-row>
       <ion-col size-md="6" offset-md="3">
@@ -35,3 +36,15 @@
               </ion-item-options>
             </ion-item-sliding>
             <ion-button href="parametres/monnaies/ajouter" shape="round" color="success" expand="block"  > Ajouter un Monnaie</ion-button>
+          </ion-list>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </div>
+  <div *ngIf="user.etat=='Inactif' ">
+    <ion-text color="danger">
+      <h1>Desolé , Vous étes en etat Inactif pour le moment vous pouver pas acceder le site !!  <ion-icon name="sad-outline"></ion-icon><ion-icon name="sad-outline"></ion-icon></h1>
+    </ion-text>
+
+  </div>

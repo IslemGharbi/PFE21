@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
@@ -10,6 +10,7 @@ import { ToastController } from '@ionic/angular';
 })
 export class AjouterPage implements OnInit {
   monnaie:any =  {} ;
+  user
 
   constructor(
     private http : HttpClient,
@@ -19,6 +20,13 @@ export class AjouterPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    const headers = new HttpHeaders({
+      'Authorization' : `Bearer ${localStorage.getItem( 'token')}`
+    })
+
+    this.http.get('http://127.0.0.1:8000/api/currentUser',{headers}).subscribe(
+      result=> this.user = result
+    )
   }
 
 

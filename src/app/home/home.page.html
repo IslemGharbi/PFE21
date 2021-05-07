@@ -7,6 +7,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <div *ngIf="user.profil=='Admin' && user.etat=='Actif' ">
   <ion-grid>
     <ion-row>
       <ion-col size-md="6" offset-md="3">
@@ -64,8 +65,8 @@
               <ion-label color="dark">Profil</ion-label>
               <ion-select [(ngModel)]="addUser.profil" name="profil" placeholder="Select Profils">
                 <ion-select-option value="Admin">Admin</ion-select-option>
-                <ion-select-option value="profil 1">Profil 1</ion-select-option>
-                <ion-select-option value="profil 2">Profil 2</ion-select-option>
+                <ion-select-option value="profil 1">User</ion-select-option>
+
               </ion-select>
             </ion-item>
             <ion-chip color="danger" [hidden]="!error.profil">
@@ -77,7 +78,7 @@
               <ion-select [(ngModel)]="addUser.etat" name="etat" placeholder="Select Etat">
                 <ion-select-option value="Actif">Actif</ion-select-option>
                 <ion-select-option value="Inactif">Inactif</ion-select-option>
-                <ion-select-option value="Bloqué">Bloqué</ion-select-option>
+
               </ion-select>
             </ion-item>
             <ion-chip color="danger" [hidden]="!error.etat">
@@ -103,8 +104,9 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+  </div>
 
-  <!-- <div *ngIf="user.profil=='profil 1' ">
+  <div *ngIf="user.profil=='profil 1' ">
 
 
 
@@ -115,6 +117,12 @@
 
 
 
-    </div> -->
+    </div>
+    <div *ngIf="user.etat=='Inactif' ">
+      <ion-text color="danger">
+        <h1>Desolé , Vous étes en etat Inactif pour le moment vous pouver pas acceder le site !!  <ion-icon name="sad-outline"></ion-icon><ion-icon name="sad-outline"></ion-icon></h1>
+      </ion-text>
+
+    </div>
 
 </ion-content>
