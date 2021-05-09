@@ -11,7 +11,7 @@ import { ListsService } from 'src/app/services/lists.service';
 })
 export class MonnaiesPage implements OnInit {
   public monnaies:any =[];
-  user
+  user:any={}
   constructor(
     private listService:ListsService,
      private router : Router,

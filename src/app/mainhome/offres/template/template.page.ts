@@ -9,6 +9,9 @@ import { ListsService } from 'src/app/services/lists.service';
 })
 export class TemplatePage implements OnInit {
   id;
+  value
+  produit
+  prix:number
   public addPros:any =[];
   constructor(
     private route :ActivatedRoute,
@@ -21,6 +24,14 @@ export class TemplatePage implements OnInit {
 
       this.addPros=data,
     )
+
+    this.myService.getProduit().subscribe(
+      data => this.produit= data
+    )
+    console.log(this.prix)
+  }
+  calculer(){
+
   }
 
 }

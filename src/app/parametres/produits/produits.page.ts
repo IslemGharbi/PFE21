@@ -10,7 +10,7 @@ import { ListsService } from 'src/app/services/lists.service';
   styleUrls: ['./produits.page.scss'],
 })
 export class ProduitsPage implements OnInit {
-user
+user:any={}
   public produits:any =[];
   constructor(
     private listService:ListsService,

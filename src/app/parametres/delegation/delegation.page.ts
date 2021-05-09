@@ -10,7 +10,7 @@ import { ListsService } from 'src/app/services/lists.service';
   styleUrls: ['./delegation.page.scss'],
 })
 export class DelegationPage implements OnInit {
-user
+user:any={}
   public delegations:any =[];
   constructor(
     private listService:ListsService,

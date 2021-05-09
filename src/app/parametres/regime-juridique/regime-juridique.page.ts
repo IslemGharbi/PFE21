@@ -10,7 +10,7 @@ import { ListsService } from 'src/app/services/lists.service';
   styleUrls: ['./regime-juridique.page.scss'],
 })
 export class RegimeJuridiquePage implements OnInit {
-user
+user:any={}
   public forms:any =[];
   constructor(
     private listService:ListsService,

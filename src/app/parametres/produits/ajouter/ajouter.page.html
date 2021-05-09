@@ -20,9 +20,14 @@
           </ion-card-header>
           <ion-item>
 
-            <ion-label position="floating" color="dark">Type</ion-label>
+            <ion-label position="floating" color="dark">Nom</ion-label>
             <ion-input [(ngModel)]="produit.nom_produit" name="nom" type="text"></ion-input>
           </ion-item>
+          <ion-item>
+          <ion-label position="floating" color="dark">Prix</ion-label>
+          <ion-input [(ngModel)]="produit.prix_produit" name="nom" type="text"></ion-input>
+        </ion-item>
+
 
           <ion-item>
             <ion-button fill="solid" slot="end" color="success" (click)="aadProduit()"  >Ajouter <ion-icon name="add-circle-outline"></ion-icon></ion-button>

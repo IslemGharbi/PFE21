@@ -11,7 +11,7 @@ import { ToastController } from '@ionic/angular';
 export class AjouterPage implements OnInit {
 
   secteur:any =  {} ;
-  user
+  user:any={}
 
   constructor(
     private http : HttpClient,

@@ -11,7 +11,7 @@ import { ListsService } from 'src/app/services/lists.service';
 })
 export class RegimePage implements OnInit {
   public regimes:any =[];
-  user
+  user:any={}
   constructor(
     private listService:ListsService,
     private router : Router,

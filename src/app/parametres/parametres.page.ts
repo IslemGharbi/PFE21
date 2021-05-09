@@ -11,7 +11,7 @@ export class ParametresPage implements OnInit {
 
   constructor(private router : Router,
     private http : HttpClient) { }
-user
+user:any={}
   ngOnInit() {
     const headers = new HttpHeaders({
       'Authorization' : `Bearer ${localStorage.getItem( 'token')}`

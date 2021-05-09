@@ -10,7 +10,7 @@ import { ToastController } from '@ionic/angular';
 })
 export class AjouterPage implements OnInit {
   monnaie:any =  {} ;
-  user
+  user:any={}
 
   constructor(
     private http : HttpClient,
@@ -33,7 +33,7 @@ export class AjouterPage implements OnInit {
   aadMonnaie(){
     return this.http.post('http://127.0.0.1:8000/api/addMonnaie',this.monnaie).subscribe(
       data => {
-        this.Alert(),this.cancel()
+        this.Alert(),this.router.navigate(['parametres/monnaies'])
       },
     )}
 

@@ -11,7 +11,7 @@ import { ToastController } from '@ionic/angular';
 export class AjouterPage implements OnInit {
 
   delegation:any =  {} ;
-  user
+  user:any={}
 
   constructor(
     private http : HttpClient,

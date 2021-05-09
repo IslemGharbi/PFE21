@@ -10,7 +10,7 @@ import { ListsService } from 'src/app/services/lists.service';
   styleUrls: ['./pays.page.scss'],
 })
 export class PaysPage implements OnInit {
-user
+user:any={}
   public pays:any =[];
   constructor(
     private listService:ListsService,

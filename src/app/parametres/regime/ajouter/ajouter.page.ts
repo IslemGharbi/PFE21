@@ -10,7 +10,7 @@ import { ToastController } from '@ionic/angular';
 })
 export class AjouterPage implements OnInit {
   regime:any =  {} ;
-user
+user:any={}
   constructor(
     private http : HttpClient,
     private router : Router,

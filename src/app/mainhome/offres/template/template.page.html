@@ -22,13 +22,38 @@
                 <ion-input [(ngModel)]="addPros.codeP" name="codeP" type="text"></ion-input>
               </ion-item>
               <ion-item>
-                <ion-label><b>TVA :</b> {{addPros.tvaP}}</ion-label>
+                <ion-label><b>TVA :</b> {{addPros?.tva?.type_tva}}</ion-label>
               </ion-item>
               <ion-item>
                 <ion-label><b>Contact :</b> {{addPros.telephonemobileP}}  ,  {{addPros.telephonefixeP}}</ion-label>
               </ion-item>
               <ion-item>
-                <ion-label><b>Monnaie :</b> {{addPros.monnaieP}}</ion-label>
+                <ion-label><b>Monnaie :</b> {{addPros?.monnaie?.type_monnaie}}</ion-label>
               </ion-item>
+              <ion-list>
+                <ion-item>
+                  <ion-label color="dark"><b>Produit :</b></ion-label>
+                  <ion-select [(ngModel)]="prix" name="paysP" placeholder="Select Produit">
+                    <ion-select-option *ngFor=" let produits of produit" value="{{produits.prix_produit}}">
+                      {{produits.nom_produit}}
+                    </ion-select-option>
+
+                  </ion-select>
+                </ion-item>
+
+              </ion-list>
+              <ion-item>
+                <ion-label  color="dark"><b>prix en dinar avant TVA :{{prix}} </b></ion-label>
+
+              </ion-item>
+              <ion-item>
+                <ion-label > <b>Prix aprés TVA : </b> {{(prix+((prix/100)*(addPros?.tva?.valeur_tva)))}}</ion-label>
+
+              </ion-item>
+              <ion-item>
+                <ion-label > <b>prix en {{addPros?.monnaie?.type_monnaie}} : </b> {{((prix)+((prix)/100)*(addPros?.tva?.valeur_tva))*(addPros?.monnaie?.valeur_monnaie)}}</ion-label>
+
+              </ion-item>
+
 
 

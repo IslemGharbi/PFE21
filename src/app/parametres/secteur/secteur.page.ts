@@ -10,7 +10,7 @@ import { ListsService } from 'src/app/services/lists.service';
   styleUrls: ['./secteur.page.scss'],
 })
 export class SecteurPage implements OnInit {
-user
+user:any={}
   public secteurs:any =[];
 
   constructor(

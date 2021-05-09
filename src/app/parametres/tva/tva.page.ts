@@ -10,7 +10,7 @@ import { ListsService } from 'src/app/services/lists.service';
   styleUrls: ['./tva.page.scss'],
 })
 export class TvaPage implements OnInit {
-user
+user:any={}
   public tvas:any =[];
   constructor(
     private listService:ListsService,
