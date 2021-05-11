@@ -11,7 +11,9 @@ export class TemplatePage implements OnInit {
   id;
   value
   produit
-  prix:number
+  prix
+  pack
+  remise
   public addPros:any =[];
   constructor(
     private route :ActivatedRoute,
@@ -32,6 +34,9 @@ export class TemplatePage implements OnInit {
   }
   calculer(){
 
+  }
+  add(x,y){
+    return (parseFloat(x)+parseFloat(y))
   }
 
 }

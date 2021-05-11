@@ -9,31 +9,35 @@
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true" >
+  <br>
   <ion-grid>
     <ion-row>
-      <ion-col size-md="6" offset-md="3">
+      <ion-col size-md="9" offset-md="1.5">
         <ion-card>
           <ion-card-header color="dark ">
             <ion-card-title>Faire un offre   </ion-card-title>
           </ion-card-header>
             <ion-card-content>
               <ion-item>
-                <ion-label position="floating" color="dark">Code</ion-label>
-                <ion-input [(ngModel)]="addPros.codeP" name="codeP" type="text"></ion-input>
+                <ion-label  color="dark"><b>Code :</b></ion-label>
+                <ion-input value="{{addPros.codeP}}" color="dark" readonly type="text" readonly></ion-input>
               </ion-item>
               <ion-item>
-                <ion-label><b>TVA :</b> {{addPros?.tva?.type_tva}}</ion-label>
+                <ion-label><b>TVA :</b> </ion-label>
+                <ion-input value="{{addPros?.tva?.type_tva}}" color="dark" readonly></ion-input>
               </ion-item>
               <ion-item>
-                <ion-label><b>Contact :</b> {{addPros.telephonemobileP}}  ,  {{addPros.telephonefixeP}}</ion-label>
+                <ion-label><b>Contact :</b> </ion-label>
+               <ion-input value="{{addPros.telephonemobileP}}  ,  {{addPros.telephonefixeP}}" color="dark"  readonly ></ion-input>
               </ion-item>
               <ion-item>
-                <ion-label><b>Monnaie :</b> {{addPros?.monnaie?.type_monnaie}}</ion-label>
+                <ion-label><b>Monnaie :</b> </ion-label>
+                <ion-input value=" {{addPros?.monnaie?.type_monnaie}}" color="dark"  readonly>    </ion-input>
               </ion-item>
               <ion-list>
                 <ion-item>
                   <ion-label color="dark"><b>Produit :</b></ion-label>
-                  <ion-select [(ngModel)]="prix" name="paysP" placeholder="Select Produit">
+                  <ion-select [(ngModel)]="prix"  placeholder="Select Produit">
                     <ion-select-option *ngFor=" let produits of produit" value="{{produits.prix_produit}}">
                       {{produits.nom_produit}}
                     </ion-select-option>
@@ -41,18 +45,34 @@
                   </ion-select>
                 </ion-item>
 
+
               </ion-list>
               <ion-item>
-                <ion-label  color="dark"><b>prix en dinar avant TVA :{{prix}} </b></ion-label>
-
+                <ion-label  color="dark"><b> pack : </b></ion-label>
+                <ion-input [(ngModel)]="pack" color="dark" type="number">  </ion-input>
               </ion-item>
               <ion-item>
-                <ion-label > <b>Prix aprés TVA : </b> {{(prix+((prix/100)*(addPros?.tva?.valeur_tva)))}}</ion-label>
+                <ion-label  color="dark"><b> Remise en % : </b></ion-label>
+                <ion-input [(ngModel)]="remise" color="dark" type="number">  </ion-input>
+              </ion-item>
 
+              <ion-item>
+                <ion-label  color="dark"><b>prix en dinar avant TVA : </b></ion-label>
+                <ion-input value="{{prix*pack}}" color="dark" readonly>  </ion-input>
               </ion-item>
               <ion-item>
-                <ion-label > <b>prix en {{addPros?.monnaie?.type_monnaie}} : </b> {{((prix)+((prix)/100)*(addPros?.tva?.valeur_tva))*(addPros?.monnaie?.valeur_monnaie)}}</ion-label>
+                <ion-label  color="dark"><b>prix avant TVA avec Remise : </b></ion-label>
+                <ion-input value="{{((prix*pack)-(((prix*pack)/100)*remise))}}" color="dark" readonly>
+                </ion-input>
+              </ion-item>
 
+              <ion-item>
+                <ion-label > <b>Prix aprés TVA : </b> </ion-label>
+                <ion-input value="{{add(((prix*pack)-(((prix*pack)/100)*remise)),((((prix*pack)-(((prix*pack)/100)*remise))/100)*(addPros?.tva?.valeur_tva)))}} " color="dark" readonly>  </ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label > <b>prix en {{addPros?.monnaie?.type_monnaie}} : </b></ion-label>
+                <ion-input value="{{add(((prix*pack)-(((prix*pack)/100)*remise)),((((prix*pack)-(((prix*pack)/100)*remise)))/100)*(addPros?.tva?.valeur_tva))*(addPros?.monnaie?.valeur_monnaie)}}" color="dark" readonly>  </ion-input>
               </ion-item>
 
 

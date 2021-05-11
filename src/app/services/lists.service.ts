@@ -1,16 +1,13 @@
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { prospect } from '../model/prospect';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ListsService {
-  public pays : string[];
-  public regimes  : string[];
-  public secteurs : string[];
-  public monnaies  :string[];
+
 
   constructor(private http : HttpClient)
 {
@@ -60,7 +57,7 @@ export class ListsService {
   }
 
   prosDetail(id){
-    return this.http.get<prospect[]>('http://127.0.0.1:8000/api/getProspectById/'+id)
+    return this.http.get('http://127.0.0.1:8000/api/getProspectById/'+id)
 
   }
 
