@@ -1,0 +1,72 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-title  size="large" >
+      FMS
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button href="mainhome"><ion-icon slot="icon-only" name="home-outline" ></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<br><br>
+<ion-content>
+
+  <ion-content [fullscreen]="true">
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size-md="6" offset-md="3">
+          <ion-card>
+            <ion-card-header color="dark ">
+              <ion-card-title>Detail des offres</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-list>
+                <ion-item>
+                  <ion-label><b>Nom du prospect :</b> {{offres.nom_prospect}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>TVA : </b>{{offres.tva_prospect}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label ><b>Contact du prospect : </b>{{offres.contact_prospect}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>Monnaie :</b> {{offres.monnaie_prospect}} </ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>Produit :</b> {{offres.offre_produit}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>Pack :</b> {{offres.offre_pack}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>Remise en %:</b> {{offres.offre_remise}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>Prix du remise:</b> {{offres.prix_remise}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>Prix en dinar avant tva :</b> {{offres.prix_ht}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>Prix avant tva avec remise:</b> {{offres.prix_ht_AR}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>Prix après TVA:</b> {{offres.prix_apres_tva}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>Remise en %:</b> {{offres.offre_remise}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label><b>Prix final en {{offres.monnaie_prospect}}:</b> {{offres.prix_final}}</ion-label>
+                </ion-item>
+              </ion-list>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+</ion-content>

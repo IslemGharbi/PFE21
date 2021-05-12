@@ -44,13 +44,13 @@ async Alert() {
   });
   toast.present();}
   ngOnInit(){
-    // const headers = new HttpHeaders({
-    //   'Authorization' : `Bearer ${localStorage.getItem( 'token')}`
-    // })
+    const headers = new HttpHeaders({
+      'Authorization' : `Bearer ${localStorage.getItem( 'token')}`
+    })
 
-    // this.http.get('http://127.0.0.1:8000/api/currentUser',{headers}).subscribe(
-    //   result=> this.user = result
-    // )
+    this.http.get('http://127.0.0.1:8000/api/currentUser',{headers}).subscribe(
+      result=> this.user = result
+    )
 
   }
 

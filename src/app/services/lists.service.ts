@@ -264,8 +264,21 @@ indexForm(){
   return this.http.get('http://127.0.0.1:8000/api/indexFormejuridique')
 }
 
+ //offre
 
+ detailOffre(id){
+  return this.http.get('http://127.0.0.1:8000/api/getOffreById/'+id)
 
+}
+deleteOffre(id){
+  return this.http.delete('http://127.0.0.1:8000/api/deleteOffre/'+id)
+}
 
+getOffre(){
+  return this.http.get('http://127.0.0.1:8000/api/getOffre')
+}
+ajouterOffre(id){
+  return this.http.post('http://127.0.0.1:8000/api/addOffre',id)
+}
 
 }

@@ -20,19 +20,19 @@
             <ion-card-content>
               <ion-item>
                 <ion-label  color="dark"><b>Code :</b></ion-label>
-                <ion-input value="{{addPros.codeP}}" color="dark" readonly type="text" readonly></ion-input>
+                <ion-input [(ngModel)]="offre.nom_prospect" value="{{addPros.codeP}}" color="dark" readonly type="text" readonly></ion-input>
               </ion-item>
               <ion-item>
                 <ion-label><b>TVA :</b> </ion-label>
-                <ion-input value="{{addPros?.tva?.type_tva}}" color="dark" readonly></ion-input>
+                <ion-input [(ngModel)]="offre.tva_prospect" value="{{addPros?.tva?.type_tva}}" color="dark" readonly></ion-input>
               </ion-item>
               <ion-item>
                 <ion-label><b>Contact :</b> </ion-label>
-               <ion-input value="{{addPros.telephonemobileP}}  ,  {{addPros.telephonefixeP}}" color="dark"  readonly ></ion-input>
+               <ion-input [(ngModel)]="offre.contact_prospect" value="{{addPros.telephonemobileP}}  ,  {{addPros.telephonefixeP}}" color="dark"  readonly ></ion-input>
               </ion-item>
               <ion-item>
                 <ion-label><b>Monnaie :</b> </ion-label>
-                <ion-input value=" {{addPros?.monnaie?.type_monnaie}}" color="dark"  readonly>    </ion-input>
+                <ion-input value=" {{addPros?.monnaie?.type_monnaie}}" color="dark"  [(ngModel)]="offre.monnaie_prospect" readonly>    </ion-input>
               </ion-item>
               <ion-list>
                 <ion-item>
@@ -48,32 +48,42 @@
 
               </ion-list>
               <ion-item>
+                <ion-label  color="dark"><b> nom produit  : </b></ion-label>
+                <ion-input  color="dark" [(ngModel)]="offre.offre_produit">  </ion-input>
+              </ion-item>
+              <ion-item>
                 <ion-label  color="dark"><b> pack : </b></ion-label>
-                <ion-input [(ngModel)]="pack" color="dark" type="number">  </ion-input>
+                <ion-input [(ngModel)]="pack" color="dark" type="number" [(ngModel)]="offre.offre_pack">  </ion-input>
               </ion-item>
               <ion-item>
                 <ion-label  color="dark"><b> Remise en % : </b></ion-label>
-                <ion-input [(ngModel)]="remise" color="dark" type="number">  </ion-input>
+                <ion-input [(ngModel)]="remise" color="dark" type="number" [(ngModel)]="offre.offre_remise"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label  color="dark"><b> prix du remise: </b></ion-label>
+                <ion-input value="{{((prix*pack)/100)*remise}}" color="dark" type="number" [(ngModel)]="offre.prix_remise"></ion-input>
               </ion-item>
 
               <ion-item>
                 <ion-label  color="dark"><b>prix en dinar avant TVA : </b></ion-label>
-                <ion-input value="{{prix*pack}}" color="dark" readonly>  </ion-input>
+                <ion-input value="{{prix*pack}}" color="dark" readonly [(ngModel)]="offre.prix_ht"></ion-input>
               </ion-item>
               <ion-item>
                 <ion-label  color="dark"><b>prix avant TVA avec Remise : </b></ion-label>
-                <ion-input value="{{((prix*pack)-(((prix*pack)/100)*remise))}}" color="dark" readonly>
+                <ion-input value="{{((prix*pack)-(((prix*pack)/100)*remise))}}" color="dark" readonly  [(ngModel)]="offre.prix_ht_AR" >
                 </ion-input>
               </ion-item>
 
               <ion-item>
                 <ion-label > <b>Prix aprés TVA : </b> </ion-label>
-                <ion-input value="{{add(((prix*pack)-(((prix*pack)/100)*remise)),((((prix*pack)-(((prix*pack)/100)*remise))/100)*(addPros?.tva?.valeur_tva)))}} " color="dark" readonly>  </ion-input>
+                <ion-input value="{{add(((prix*pack)-(((prix*pack)/100)*remise)),((((prix*pack)-(((prix*pack)/100)*remise))/100)*(addPros?.tva?.valeur_tva)))}} " color="dark" readonly  [(ngModel)]="offre.prix_apres_tva">  </ion-input>
               </ion-item>
               <ion-item>
-                <ion-label > <b>prix en {{addPros?.monnaie?.type_monnaie}} : </b></ion-label>
-                <ion-input value="{{add(((prix*pack)-(((prix*pack)/100)*remise)),((((prix*pack)-(((prix*pack)/100)*remise)))/100)*(addPros?.tva?.valeur_tva))*(addPros?.monnaie?.valeur_monnaie)}}" color="dark" readonly>  </ion-input>
+                <ion-label > <b>prix final en {{addPros?.monnaie?.type_monnaie}} : </b></ion-label>
+                <ion-input value="{{add(((prix*pack)-(((prix*pack)/100)*remise)),((((prix*pack)-(((prix*pack)/100)*remise)))/100)*(addPros?.tva?.valeur_tva))/(addPros?.monnaie?.valeur_monnaie)}}" color="dark" readonly  [(ngModel)]="offre.prix_final">  </ion-input>
               </ion-item>
+<ion-item>
+              <ion-button fill="solid" slot="end" color="success" (click)="addOffre()"  >Faire une offre <ion-icon name="person-add-outline"></ion-icon></ion-button>
 
-
+            </ion-item>
 

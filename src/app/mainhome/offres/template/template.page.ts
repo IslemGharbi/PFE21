@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 import { ListsService } from 'src/app/services/lists.service';
 
 @Component({
@@ -14,10 +15,13 @@ export class TemplatePage implements OnInit {
   prix
   pack
   remise
+  offre:any={}
   public addPros:any =[];
   constructor(
     private route :ActivatedRoute,
-    private myService : ListsService
+    private myService : ListsService,
+    private toastController : ToastController,
+    private router : Router
   ) { }
 
   ngOnInit() {
@@ -30,7 +34,7 @@ export class TemplatePage implements OnInit {
     this.myService.getProduit().subscribe(
       data => this.produit= data
     )
-    console.log(this.prix)
+
   }
   calculer(){
 
@@ -39,4 +43,23 @@ export class TemplatePage implements OnInit {
     return (parseFloat(x)+parseFloat(y))
   }
 
+
+  addOffre(){
+    console.log(this.offre)
+    return this.myService.ajouterOffre(this.offre).subscribe(
+      data =>{
+        this.alert(),this.router.navigate(['mainhome'])
+
+      }
+
+    )
+
+  }
+  async alert() {
+    const toast = await this.toastController.create({
+      message: 'Offre est ajouté !',
+      duration: 2000,
+      color : "success"
+    });
+    toast.present();}
 }

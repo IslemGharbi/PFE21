@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { MainhomePageRoutingModule } from './mainhome-routing.module';
 
 import { MainhomePage } from './mainhome.page';
+import { PipesModule } from '../pipes/pipes.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MainhomePageRoutingModule
+    MainhomePageRoutingModule,
+    PipesModule
   ],
   declarations: [MainhomePage]
 })
