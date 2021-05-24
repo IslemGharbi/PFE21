@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-title class="ion-text-center" >
+      FMS
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button href="mainhome"><ion-icon slot="icon-only" name="home-outline" ></ion-icon></ion-button>
+      <ion-button href="dashboard"><ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<br>
+<br>
+
+<ion-content [fullscreen]="true" color="medium" >
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="8" offset-md="2">
+        <ion-card>
+          <ion-card-header color="dark ">
+            <ion-card-title>Statistique </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <canvas id="myChart" ></canvas>

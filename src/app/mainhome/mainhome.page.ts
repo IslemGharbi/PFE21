@@ -35,6 +35,8 @@ user : any = {}
 
   ngOnInit() {
 
+
+
     (function(d, m){
       var kommunicateSettings = {"appId":"276f95b3ed588ad779deadd52896bc072","popupWidget":true,"automaticChatOpenOnNavigation":true};
       var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
@@ -69,9 +71,12 @@ inLogin(){
 
 
 logout(event:MouseEvent){
+  this.Alert()
   this.Token.remove();
   event.preventDefault();
   this.auth.changeAuthStatus(false);
+  window.location.reload();
+
 
 }
 

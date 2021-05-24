@@ -55,6 +55,10 @@ const routes: Routes = [
     path: 'response-password-reset',
     loadChildren: () => import('./response-password-reset/response-password-reset.module').then( m => m.ResponsePasswordResetPageModule)
   },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
 
 
 

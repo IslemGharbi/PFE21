@@ -20,7 +20,8 @@ export class LoginPage implements OnInit {
   login(){
    this.ListsService.login(this.loginn).subscribe(
      data =>{ this.dataHandle(data),
-      this.router.navigate(['mainhome']),this.Alert()},
+      this.router.navigateByUrl("mainhome"),this.Alert()},
+
      error => this.errorHandle(error)
 
    )

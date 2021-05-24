@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-title class="ion-text-center" >
+      FMS
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button href="mainhome"><ion-icon slot="icon-only" name="home-outline" ></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<br>
+<br>
+
+<ion-content [fullscreen]="true" color="medium" >
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="8" offset-md="2">
+        <ion-card>
+          <ion-card-header color="dark ">
+            <ion-card-title class="ion-text-center">Tableau de bord</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <br>
+            <section class="ion-text-center">
+              <ion-icon name="person-circle-outline"></ion-icon>
+              <h1>Welcome,<br>
+              {{user.nom }} {{user.prenom}}</h1>
+            </section>
+            <ion-grid>
+              <ion-row>
+                <ion-col   >
+                  <ion-card href="dashboard/profil" class="ion-text-center" padding color="danger">
+                    <br>
+                    <ion-icon name="person"></ion-icon><br>
+                    <h2>Mon profil </h2><br>
+                  </ion-card>
+
+                </ion-col>
+
+                <ion-col  >
+                  <ion-card href="dashboard/stats" class="ion-text-center" padding color="danger"><br>
+                    <ion-icon name="stats-chart"></ion-icon><br>
+                    <h2>Statistique</h2><br>
+                  </ion-card>
+
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            <ion-grid>
+              <ion-row>
+                <ion-col >
+                  <ion-card class="ion-text-center" padding color="danger">
+                    <ion-icon name="person"></ion-icon>
+                  </ion-card>
+
+                </ion-col>
+
+                <ion-col  >
+                  <ion-card class="ion-text-center" padding color="danger">
+                    <ion-icon name="person"></ion-icon>
+                  </ion-card>
+
+                </ion-col>
+              </ion-row>
+            </ion-grid>
