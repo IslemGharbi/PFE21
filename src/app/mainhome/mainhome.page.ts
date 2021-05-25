@@ -95,7 +95,7 @@ async Alert() {
   }
   async alert() {
     const toast = await this.toastController.create({
-      message: 'Utilisateur est supprimé !',
+      message: 'Offre est supprimé !',
       duration: 2000,
       color : "danger"
     });

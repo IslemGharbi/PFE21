@@ -15,9 +15,16 @@
 // }
 
 ion-content{
-  --background:url('../../assets/img/back.png');
+  --background:url('../../assets/img/3-34348_white-and-red-wallpaper-hd.jpg');
   --background-repeat: no-repeat;
 --background-position: center;
- --background-size: contain;
+ --background-size: cover;
 }
+
+ion-img{
+  height: 100px;
+  width: 400px;
+}
+
+
 

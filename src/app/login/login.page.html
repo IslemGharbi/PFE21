@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="danger">
+  <ion-toolbar color="dark">
     <ion-title href="mainhome" size="large" >
       FMS
     </ion-title>
@@ -15,11 +15,17 @@
     <ion-row>
       <ion-col size-md="4" offset-md="4">
         <ion-card>
-          <ion-card-header color="dark ">
+          <ion-card-header color="danger ">
             <ion-card-title>Login</ion-card-title>
           </ion-card-header>
           <ion-card-content>
             <form #loginform=ngForm >
+              <ion-item>
+                <ion-img [src]=" '../../assets/img/logo.png' "></ion-img>
+              </ion-item>
+
+
+
 
               <ion-chip color="danger" [hidden]="!error">
                 <ion-label> {{error}}</ion-label>
