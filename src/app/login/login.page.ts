@@ -16,6 +16,7 @@ export class LoginPage implements OnInit {
   loginn:any ={};
   public error = null
 
+
   constructor(private toastController : ToastController,private auth : AuthService ,private router : Router,private http : HttpClient,private ListsService : ListsService,private token : TokenService) { }
   login(){
    this.ListsService.login(this.loginn).subscribe(
@@ -24,9 +25,14 @@ export class LoginPage implements OnInit {
 
      error => this.errorHandle(error)
 
+
+
+
    )
   }
   errorHandle(error){
+
+
      this.error=error.error.error;
   }
 

@@ -15,26 +15,12 @@ export class StatsPage implements OnInit {
 var myChart = new Chart("myChart", {
     type: 'bar',
     data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: ["Switch", "MO", "MATRIX", "MX", "Optimant"],
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
+            label: 'Compsant du data center',
+            data: [8, 4, 3, 5,1,6, 3],
+
+
             borderWidth: 1
         }]
     },
@@ -47,6 +33,28 @@ var myChart = new Chart("myChart", {
             }]
         }
     }
+});
+var myChart = new Chart("my", {
+  type: 'bar',
+  data: {
+      labels: ["Landor", "Polina", "sagemcom"],
+      datasets: [{
+          label: 'nombre des offre par prospect',
+          data: [4, 3, 7],
+
+
+          borderWidth: 1
+      }]
+  },
+  options: {
+      scales: {
+          yAxes: [{
+              ticks: {
+                  beginAtZero:true
+              }
+          }]
+      }
+  }
 });
   }
 

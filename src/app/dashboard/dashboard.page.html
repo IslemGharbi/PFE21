@@ -12,7 +12,7 @@
 <br>
 
 <ion-content [fullscreen]="true"  >
-
+<div *ngIf="user.profil=='Admin' ">
   <ion-grid>
     <ion-row>
       <ion-col size-md="8" offset-md="2">
@@ -50,17 +50,37 @@
             <ion-grid>
               <ion-row>
                 <ion-col >
-                  <ion-card class="ion-text-center" padding color="danger">
-                    <ion-icon name="person"></ion-icon>
+                  <ion-card href="gestion-users" class="ion-text-center" padding color="danger"><br>
+                    <ion-icon name="person-add-outline"></ion-icon><br>
+                    <h2>Gestion des utilisateurs</h2><br>
                   </ion-card>
 
                 </ion-col>
 
                 <ion-col  >
-                  <ion-card class="ion-text-center" padding color="danger">
-                    <ion-icon name="person"></ion-icon>
+                  <ion-card href="gestion-prospect" class="ion-text-center" padding color="danger"><br>
+                    <ion-icon name="person-add-outline"></ion-icon><br>
+                    <h2>Gestion des Prospect</h2><br>
                   </ion-card>
 
                 </ion-col>
               </ion-row>
             </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+<div *ngIf="user.profil=='profil 1' ">
+
+
+
+  <ion-text color="danger">
+    <h1>Desolé , seul les admins sont autorisé a cette page !!  <ion-icon name="sad-outline"></ion-icon><ion-icon name="sad-outline"></ion-icon></h1>
+  </ion-text>
+
+
+
+
+  </div>

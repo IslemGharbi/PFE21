@@ -47,7 +47,7 @@
             <ion-item>
 
               <ion-label position="floating" color="dark">Mot de passe</ion-label>
-              <ion-input type="password" [(ngModel)]="addUser.password" name="password"></ion-input>
+              <ion-input type="password" [(ngModel)]="addUser.password" name="password" minlength="8"></ion-input>
             </ion-item>
             <ion-chip color="danger" [hidden]="!error.password">
               <ion-label> {{error.password}}</ion-label>

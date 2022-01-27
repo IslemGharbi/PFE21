@@ -17,7 +17,7 @@
 
 
 <ion-content [fullscreen]="true" >
-  <div *ngIf="user.etat=='Actif' || user.etat==null ">
+
     <ion-grid fixed>
     <ion-row>
       <ion-col size ="12" >
@@ -58,7 +58,7 @@
 
 
 
-  <div *ngIf="select == 'Home' ">
+  <div *ngIf="select == 'Home'  ">
     <ion-grid>
       <ion-row>
         <ion-col size-md="10" offset-md="1">
@@ -107,12 +107,14 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-  </div>
+    </div>
+
 
 
 
 
 <div *ngIf="select == 'Produit' ">
+
   <ion-grid>
     <ion-row>
       <ion-col size-md="10" offset-md="1">
@@ -136,7 +138,9 @@
   </ion-grid>
 </div>
 
+
 <div *ngIf="select == 'Contact' ">
+
   <ion-grid>
     <ion-row>
       <ion-col size-md="10" offset-md="1">
@@ -158,6 +162,9 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+
+
+
 </div>
 
 
@@ -205,13 +212,13 @@
 
 
 
-</div>
-<div *ngIf="user.etat=='Inactif' ">
+
+<!-- <div *ngIf="user.etat=='Inactif' ">
   <ion-text color="danger">
     <h1>Desolé , Vous étes en etat Inactif pour le moment vous pouver pas acceder le site !!  <ion-icon name="sad-outline"></ion-icon><ion-icon name="sad-outline"></ion-icon></h1>
   </ion-text>
 
-</div>
+</div> -->
 
 </ion-content>
 

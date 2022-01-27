@@ -75,7 +75,7 @@ logout(event:MouseEvent){
   this.Token.remove();
   event.preventDefault();
   this.auth.changeAuthStatus(false);
-  window.location.reload();
+
 
 
 }
